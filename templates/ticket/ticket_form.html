@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>{% block title %} Création du ticket {% endblock %}</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} Création du ticket {% endblock %}
 {% block content %}
 	<form method="post">
 		{% csrf_token %}
@@ -12,5 +7,3 @@
   <button type="submit">Submit</button>
 </form>
 {% endblock %}
-</body>
-</html>
