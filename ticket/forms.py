@@ -7,5 +7,7 @@ class TicketForm(forms.ModelForm):
 		model = Ticket
 		fields = [
 			'sujet',
-			'description'
+			'description',
+			'cible',
 		]
+

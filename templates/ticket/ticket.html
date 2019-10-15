@@ -2,6 +2,6 @@
 {% block title %} Ticket view {% endblock %}
 {% block content %}
 	{% for item in tickets%}
-		<p>{{ item.sujet }} {{ item.description }}</p>
+		<p>{{ item.sujet }} {{ item.description }} {{ item.cible }}</p>
 	{% endfor %}
 {% endblock %}
