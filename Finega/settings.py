@@ -77,15 +77,23 @@ WSGI_APPLICATION = 'Finega.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-	# 'default': {
-	# 	'ENGINE': 'django.db.backends.sqlite3',
-	# 	'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-	# }
-	'default': {
+	 'default': {
+	 	'ENGINE': 'django.db.backends.sqlite3',
+	 	'NAME': os.path.join(BASE_DIR, 'defaultDB'),
+#	 	'ENGINE': 'djongo',
+#		'NAME': 'data',
+	 },
+	 'userDB': {
+	 	'ENGINE': 'django.db.backends.sqlite3',
+	 	'NAME': os.path.join(BASE_DIR, 'userDB')
+	 },
+	'data': {
 		'ENGINE': 'djongo',
-		'NAME': 'djongoDB',
+		'NAME': 'data',
 	}
 }
+
+#DATABASE_ROUTERS = ['Finega.routerDB.DataRouter',]
 
 
 # Password validation
