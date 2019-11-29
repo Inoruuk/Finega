@@ -4,6 +4,8 @@ from .forms import TicketForm
 from .models import Ticket
 # Create your views here.
 
+ticket_db = 'data'
+
 
 def ticket_form_view(request):
 	# if this is a POST request we need to process the form data
@@ -24,5 +26,5 @@ def ticket_form_view(request):
 
 
 def ticket_view(request):
-	ticket_data = Ticket.objects.all()
+	ticket_data = Ticket.a_objects.using(ticket_db).all()
 	return render(request, 'ticket/ticket.html', {'tickets': ticket_data})

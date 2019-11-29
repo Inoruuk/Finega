@@ -8,12 +8,6 @@ class TicketForm(forms.ModelForm):
 		model = Ticket
 		fields = [
 			'sujet',
+			'cible',
 			'description',
 		]
-
-#	@property	
-#	def save(self, commit=True):
-#		ticket = super().save()
-#		print('PRINT ICI', ticket.sujet, 'PRINT FIN', sep='\n')
-#	return ticket
-
