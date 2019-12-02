@@ -1,8 +1,0 @@
-{% extends 'base.html' %}
-{% block title %} Ticket view {% endblock %}
-{% block content %}
-	{% for item in tickets%}
-		<p>Sujet :{{ item.sujet }}</p>
-		<p>Description : {{ item.description }} </p>
-	{% endfor %}
-{% endblock %}

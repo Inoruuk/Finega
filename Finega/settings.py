@@ -38,7 +38,7 @@ INSTALLED_APPS = [
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
 	# mine
-	'ticket',
+	'analizer',
 ]
 
 MIDDLEWARE = [
@@ -79,8 +79,6 @@ DATABASES = {
 	 'default': {
 	 	'ENGINE': 'django.db.backends.sqlite3',
 	 	'NAME': os.path.join(BASE_DIR, 'defaultDB'),
-#	 	'ENGINE': 'djongo',
-#		'NAME': 'data',
 	 },
 	 'userDB': {
 	 	'ENGINE': 'django.db.backends.sqlite3',
