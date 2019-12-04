@@ -1,6 +1,7 @@
 from djongo import models
 # Create your models here.
 
+#crea Campagne
 #from analizer.models import Campagne, DataInfoSciage, GrumeData, MesureGrume, InfoGrume
 #data = DataInfoSciage(nombreproduits = 5, epaisseur=10, largeur=15, longueur= 20, info=25)
 #info = InfoGrume(numgrum=5, essence=10, qualite=15, numcampagne=20, reserve=25)
