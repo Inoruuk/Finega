@@ -27,7 +27,8 @@ class InfoGrume(models.Model):
 		return str(self.numcampagne)	
 
 	def test(self):
-		return numgrum/essence
+		return self.numgrum / self.essence
+
 
 class MesureGrume(models.Model):
 	longueur_reelle_mm = models.PositiveIntegerField()
@@ -49,6 +50,7 @@ class MesureGrume(models.Model):
 	class Meta:
 		abstract = True
 
+
 class GrumeData(models.Model):
 	infogrume = models.EmbeddedModelField(model_container=InfoGrume)
 	mesuregrume = models.EmbeddedModelField(model_container=MesureGrume)
@@ -56,6 +58,7 @@ class GrumeData(models.Model):
 	class Meta:
 		abstract = True
 		
+
 class DataInfoSciage(models.Model):
 	nombreproduits = models.PositiveIntegerField()
 	epaisseur = models.PositiveIntegerField()
@@ -68,7 +71,8 @@ class DataInfoSciage(models.Model):
 
 	def __str__(self):
 		return 'DataInfoSciage'
-		
+
+
 class CauseEvenement(models.Model):
 	#datetime(2015, 10, 09, 23, 55, 59, 342380, w/e) (year, month, day, hour, min, sec, microsec, timezone)
 	# 'regex' pour recup le datetime du fichier XML = \d+
@@ -77,6 +81,7 @@ class CauseEvenement(models.Model):
 
 	class Meta:
 		abstract = True
+
 
 class TempsDeCycle(models.Model):
 	time = models.DateTimeField()
@@ -100,11 +105,13 @@ class TempsDeCycle(models.Model):
 	class Meta:
 		abstract = True
 
+
 class Temps(models.Model):
 	pass
 
 	class Meta:
 		abstract = True
+
 
 class InfoTempsDeCycles(models.Model):
 	pass
@@ -112,12 +119,14 @@ class InfoTempsDeCycles(models.Model):
 	class Meta:
 		abstract = True
 
+
 class InfoCycles(models.Model):
 	pass
 
 	class Meta:
 		abstract = True
-		
+
+
 class InfosCycleAutomate(models.Model):
 	debut_sciage = models.DateTimeField()
 	fin_sciage = models.DateTimeField()
@@ -130,14 +139,15 @@ class InfosCycleAutomate(models.Model):
 	heure_table_analyse_en_attente_chargement = models.DateTimeField()
 	heure_depart_transfert_table_vers_portique = models.DateTimeField()
 	heure_depart_griffage_sciage = models.DateTimeField()
-	temps = model.ArrayModelField(model_container=Temps)
-	vitesse_sciage_canter_m_min = IntegerField()
-	temps_saturation_ejection_tt_vers_twin = IntegerField()
-	info_temps_de_cycle = ArrayModelField(model_container=InfoTempsDeCycles)
-	info_cycles = ArrayModelField(model_container=InfoCycles)
+	temps = models.ArrayModelField(model_container=Temps)
+	vitesse_sciage_canter_m_min = models.PositiveIntegerField()
+	temps_saturation_ejection_tt_vers_twin = models.PositiveIntegerField()
+	info_temps_de_cycle = models.ArrayModelField(model_container=InfoTempsDeCycles)
+	info_cycles = models.ArrayModelField(model_container=InfoCycles)
 
 	class Meta:
 		abstract = True
+
 
 class CauseDureeEvenement(models.Model):
 	duree = models.IntegerField()
@@ -146,28 +156,26 @@ class CauseDureeEvenement(models.Model):
 	class Meta:
 		abstract = True
 
+
 class Evenements(models.Model):
 	cause_duree_evenement = models.ArrayModelField(model_container=CauseDureeEvenement)
 
 	class Meta:
 		abstract = True
 
+
 class CausesInterruptionsTable(models.Model):
-	evenement = model.EmbeddedModelField(model_container=Evenements)
+	evenement = models.EmbeddedModelField(model_container=Evenements)
 
 	class Meta:
 		abstract = True
+
 
 class CausesInterruptionsSciage(models.Model):
-	evenement = model.EmbeddedModelField(model_container=Evenements)
+	evenement = models.EmbeddedModelField(model_container=Evenements)
 
 	class Meta:
 		abstract = True
-
-
-
-
-
 
 
 class Campagne(models.Model):
