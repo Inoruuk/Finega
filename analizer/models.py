@@ -2,6 +2,14 @@ from djongo import models
 # Create your models here.
 
 
+########															########
+########	Les modeles sont basé sur les donnée des fichiers XML	########
+########			plus précisement 2019_11_13.xml					########
+########		A modifier si les données changent					########
+
+
+
+
 ########													########
 ########			PAS ENCORE UTILISER, A REVOIR			########
 ########													########
@@ -41,6 +49,7 @@ class InfoCycles(models.Model):
 
 
 class InfoGrume(models.Model):
+
 	numero_grume = models.PositiveIntegerField()
 	essence = models.PositiveIntegerField()
 	qualite = models.PositiveIntegerField()
@@ -71,12 +80,13 @@ class InfoGrume(models.Model):
 
 
 class MesureGrume(models.Model):
+
 	longueur_reelle_mm = models.PositiveIntegerField()
 	longueur_pour_cycle_quais_mm = models.PositiveIntegerField()
 	longueur_marchande_mm = models.PositiveIntegerField()
 	diametre_fin_bout_mm = models.PositiveIntegerField()
 	diametre_gros_bout_mm = models.PositiveIntegerField()
-	diametre_moyen_nm = models.PositiveIntegerField()
+	diametre_moyen_mm = models.PositiveIntegerField()
 	diametre_milieu_mm = models.PositiveIntegerField()
 	diametre_cyclindre_inscrit_mm = models.PositiveIntegerField()
 	diametre_cubage_mm = models.PositiveIntegerField()
@@ -98,7 +108,7 @@ class MesureGrume(models.Model):
 			longueur_marchande_mm=param['LongueurMarchandeMM'],
 			diametre_fin_bout_mm=param['DiametreFinBoutMM'],
 			diametre_gros_bout_mm=param['DiametreGrosBoutMM'],
-			diametre_moyen_nm=param['DiametreMoyenMM'],
+			diametre_moyen_mm=param['DiametreMoyenMM'],
 			diametre_milieu_mm=param['DiametreMilieuMM'],
 			diametre_cyclindre_inscrit_mm=param['DiametreCyclindreInscritMM'],
 			diametre_cubage_mm=param['DiametreCubageMM'],
@@ -111,8 +121,12 @@ class MesureGrume(models.Model):
 		)
 		return info
 
+	def __str__(self):
+		return 'Mesure des grumes en MM en CM3'
+
 
 class GrumeData(models.Model):
+
 	infogrume = models.EmbeddedModelField(model_container=InfoGrume)
 	mesuregrume = models.EmbeddedModelField(model_container=MesureGrume)
 
@@ -120,7 +134,7 @@ class GrumeData(models.Model):
 		abstract = True
 
 	def __str__(self):
-		return self.infogrume.__str__()
+		return 'Données des Grume de' + self.infogrume.__str__()
 
 	@classmethod
 	def create(cls, info:InfoGrume, mesure: MesureGrume):
@@ -128,9 +142,10 @@ class GrumeData(models.Model):
 			infogrume=info,
 			mesuregrume=mesure)
 		return info
-		
+
 
 class DataInfoSciage(models.Model):
+
 	nombre_produits = models.PositiveIntegerField()
 	epaisseur = models.PositiveIntegerField()
 	largeur = models.PositiveIntegerField()
@@ -141,7 +156,7 @@ class DataInfoSciage(models.Model):
 		abstract = True
 
 	def __str__(self):
-		return 'DataInfoSciage'
+		return 'Données de sciage'
 
 	@classmethod
 	def create(cls, param: dict):
@@ -153,6 +168,7 @@ class DataInfoSciage(models.Model):
 			info=param['Info']
 		)
 		return info
+
 
 class CauseEvenement(models.Model):
 	#datetime(2015, 10, 09, 23, 55, 59, 342380, w/e) (year, month, day, hour, min, sec, microsec, timezone)
@@ -171,8 +187,12 @@ class CauseEvenement(models.Model):
 		)
 		return info
 
+	def __str__(self):
+		return 'Evenement causé a %s de cause %s' % (self.heure, self.cause)
+
 
 class TempsDeCycle(models.Model):
+
 	time = models.DateTimeField()
 	temps_sciage_passage_1grume = models.PositiveIntegerField()
 	temps_retour_passage_1grume = models.PositiveIntegerField()
@@ -217,8 +237,12 @@ class TempsDeCycle(models.Model):
 		)
 		return info
 
+	def __str__(self):
+		return 'Temps de cycle'
+
 
 class InfosCycleAutomate(models.Model):
+
 	debut_sciage = models.DateTimeField()
 	fin_sciage = models.DateTimeField()
 	heure_grume_prete_pour_ejection = models.DateTimeField()
@@ -261,8 +285,12 @@ class InfosCycleAutomate(models.Model):
 		)
 		return info
 
+	def __str__(self):
+		return 'Info cycle automatique'
+
 
 class CauseDureeEvenement(models.Model):
+
 	duree = models.PositiveIntegerField()
 	cause = models.PositiveIntegerField()
 
@@ -277,32 +305,82 @@ class CauseDureeEvenement(models.Model):
 		)
 		return info
 
+	def __str__(self):
+		return 'Evenement de durée %s de cause %s' % (self.duree, self.cause)
+
 
 class Evenements(models.Model):
+
 	cause_duree_evenement = models.ArrayModelField(model_container=CauseDureeEvenement)
 
 	class Meta:
 		abstract = True
 
+	@classmethod
+	def create(cls, param: dict):
+		info = cls(
+			cause_duree_evenement=param['CauseDureeEvenement']
+		)
+		return info
+
+	def __str__(self):
+		return self.cause_duree_evenement.__str__()
+
 
 class CausesInterruptionsTable(models.Model):
+
 	evenement = models.EmbeddedModelField(model_container=Evenements)
 
 	class Meta:
 		abstract = True
+
+	@classmethod
+	def create(cls, param: dict):
+		info = cls(
+			evenement=param['Evenements']
+		)
+		return info
+
+	def __str__(self):
+		return self.evenement.__str__()
 
 
 class CausesInterruptionsSciage(models.Model):
+
 	evenement = models.EmbeddedModelField(model_container=Evenements)
 
 	class Meta:
 		abstract = True
 
+	@classmethod
+	def create(cls, param: dict):
+		info = cls(
+			evenement=param['Evenements']
+		)
+		return info
+
+	def __str__(self):
+		return self.evenement.__str__()
+
 
 class Campagne(models.Model):
-	grumedata = models.EmbeddedModelField(model_container=GrumeData)
-	infosciage = models.ArrayModelField(model_container=DataInfoSciage)
+
+	grume_data = models.EmbeddedModelField(model_container=GrumeData)
+	info_sciage = models.ArrayModelField(model_container=DataInfoSciage)
+
 	objects = models.DjongoManager()
 
 	def save(self):
 		t = super().save(using='data')
+		return t
+
+	def __str__(self):
+		return 'Infomartion de la Campagne'
+
+	@classmethod
+	def create(cls, param: dict):
+		info = cls(
+			grume_data=param['GrumeData'],
+			info_sciage=param['DataInfoSciage']
+		)
+		return info
