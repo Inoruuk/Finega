@@ -1,4 +1,6 @@
 from djongo import models
+
+
 # Create your models here.
 
 
@@ -6,8 +8,6 @@ from djongo import models
 ########	Les modeles sont basé sur les donnée des fichiers XML	########
 ########			plus précisement 2019_11_13.xml					########
 ########		A modifier si les données changent					########
-
-
 
 
 ########													########
@@ -34,28 +34,28 @@ class InfoCycles(models.Model):
 	class Meta:
 		abstract = True
 
+
 ########													########
 ########			PAS ENCORE UTILISER, A REVOIR			########
 ########													########
 
-#crea Campagne
-#from analizer.models import Campagne, DataInfoSciage, GrumeData, MesureGrume, InfoGrume
-#data = DataInfoSciage(nombreproduits = 5, epaisseur=10, largeur=15, longueur= 20, info=25)
-#info = InfoGrume(numgrum=5, essence=10, qualite=15, numcampagne=20, reserve=25)
-#info = InfoGrume(numgrum=5, essence=10, qualite=15, numcampagne=20, reserve=25)
-#mesure = MesureGrume(longueurreellemm=30, longueurpourcyclequaismm=35, longueurmarchandemm=40, diametrefinboutmm=45, diametregrosboutmm=50, diametremoyenm=60, diametremilieumm=65, diametrecyclindreinscritmm=70, diametrecubagemm=75, longueurcubagemm=80, cubagereelcm3= 85, reserve1=1, reserve2=2, reserve3=3, reserve4=4)
-#grume = GrumeData(infogrume=info, mesuregrume=mesure)
-#camp = Campagne(grumedata=grume, infosciage=[data, data, data])
+# crea Campagne
+# from analizer.models import Campagne, DataInfoSciage, GrumeData, MesureGrume, InfoGrume
+# data = DataInfoSciage(nombreproduits = 5, epaisseur=10, largeur=15, longueur= 20, info=25)
+# info = InfoGrume(numgrum=5, essence=10, qualite=15, numcampagne=20, reserve=25)
+# info = InfoGrume(numgrum=5, essence=10, qualite=15, numcampagne=20, reserve=25)
+# mesure = MesureGrume(longueurreellemm=30, longueurpourcyclequaismm=35, longueurmarchandemm=40, diametrefinboutmm=45, diametregrosboutmm=50, diametremoyenm=60, diametremilieumm=65, diametrecyclindreinscritmm=70, diametrecubagemm=75, longueurcubagemm=80, cubagereelcm3= 85, reserve1=1, reserve2=2, reserve3=3, reserve4=4)
+# grume = GrumeData(infogrume=info, mesuregrume=mesure)
+# camp = Campagne(grumedata=grume, infosciage=[data, data, data])
 
 
 class InfoGrume(models.Model):
-
 	numero_grume = models.PositiveIntegerField()
 	essence = models.PositiveIntegerField()
 	qualite = models.PositiveIntegerField()
-#	numero_approvisionnement  = models.PositiveIntegerField()
-	numero_campagne  = models.PositiveIntegerField()
-#	commentaire = models.TextField()
+	#numero_approvisionnement  = models.PositiveIntegerField()
+	numero_campagne = models.PositiveIntegerField()
+	#commentaire = models.TextField()
 	reserve = models.PositiveIntegerField()
 
 	class Meta:
@@ -69,7 +69,7 @@ class InfoGrume(models.Model):
 			qualite=param['Qualite'],
 			numero_campagne=param['NumeroCampagne'],
 			reserve=param['Reserve']
-			)
+		)
 		return info
 
 	def __str__(self):
@@ -80,7 +80,6 @@ class InfoGrume(models.Model):
 
 
 class MesureGrume(models.Model):
-
 	longueur_reelle_mm = models.PositiveIntegerField()
 	longueur_pour_cycle_quais_mm = models.PositiveIntegerField()
 	longueur_marchande_mm = models.PositiveIntegerField()
@@ -126,26 +125,24 @@ class MesureGrume(models.Model):
 
 
 class GrumeData(models.Model):
-
-	infogrume = models.EmbeddedModelField(model_container=InfoGrume)
-	mesuregrume = models.EmbeddedModelField(model_container=MesureGrume)
+	info_grume = models.EmbeddedModelField(model_container=InfoGrume)
+	mesure_grume = models.EmbeddedModelField(model_container=MesureGrume)
 
 	class Meta:
 		abstract = True
 
 	def __str__(self):
-		return 'Données des Grume de' + self.infogrume.__str__()
+		return 'Données des Grume de' + self.info_grume.__str__()
 
 	@classmethod
-	def create(cls, info:InfoGrume, mesure: MesureGrume):
+	def create(cls, info: InfoGrume, mesure: MesureGrume):
 		info = cls(
-			infogrume=info,
-			mesuregrume=mesure)
+			info_grume=info,
+			mesure_grume=mesure)
 		return info
 
 
 class DataInfoSciage(models.Model):
-
 	nombre_produits = models.PositiveIntegerField()
 	epaisseur = models.PositiveIntegerField()
 	largeur = models.PositiveIntegerField()
@@ -171,7 +168,7 @@ class DataInfoSciage(models.Model):
 
 
 class CauseEvenement(models.Model):
-	#datetime(2015, 10, 09, 23, 55, 59, 342380, w/e) (year, month, day, hour, min, sec, microsec, timezone)
+	# datetime(2015, 10, 09, 23, 55, 59, 342380, w/e) (year, month, day, hour, min, sec, microsec, timezone)
 	# 'regex' pour recup le datetime du fichier XML = \d+
 	heure = models.DateTimeField()
 	cause = models.PositiveIntegerField()
@@ -192,7 +189,6 @@ class CauseEvenement(models.Model):
 
 
 class TempsDeCycle(models.Model):
-
 	time = models.DateTimeField()
 	temps_sciage_passage_1grume = models.PositiveIntegerField()
 	temps_retour_passage_1grume = models.PositiveIntegerField()
@@ -242,7 +238,6 @@ class TempsDeCycle(models.Model):
 
 
 class InfosCycleAutomate(models.Model):
-
 	debut_sciage = models.DateTimeField()
 	fin_sciage = models.DateTimeField()
 	heure_grume_prete_pour_ejection = models.DateTimeField()
@@ -290,7 +285,6 @@ class InfosCycleAutomate(models.Model):
 
 
 class CauseDureeEvenement(models.Model):
-
 	duree = models.PositiveIntegerField()
 	cause = models.PositiveIntegerField()
 
@@ -310,7 +304,6 @@ class CauseDureeEvenement(models.Model):
 
 
 class Evenements(models.Model):
-
 	cause_duree_evenement = models.ArrayModelField(model_container=CauseDureeEvenement)
 
 	class Meta:
@@ -328,7 +321,6 @@ class Evenements(models.Model):
 
 
 class CausesInterruptionsTable(models.Model):
-
 	evenement = models.EmbeddedModelField(model_container=Evenements)
 
 	class Meta:
@@ -346,7 +338,6 @@ class CausesInterruptionsTable(models.Model):
 
 
 class CausesInterruptionsSciage(models.Model):
-
 	evenement = models.EmbeddedModelField(model_container=Evenements)
 
 	class Meta:
@@ -364,7 +355,6 @@ class CausesInterruptionsSciage(models.Model):
 
 
 class Campagne(models.Model):
-
 	grume_data = models.EmbeddedModelField(model_container=GrumeData)
 	info_sciage = models.ArrayModelField(model_container=DataInfoSciage)
 
