@@ -1,0 +1,565 @@
+{
+  "Campagne": {
+    "InfoGrume": {
+      "NumeroGrume": "34",
+      "Essence": "0",
+      "Qualite": "1",
+      "NumeroCampagne": "2019111211",
+      "Reserve": "0"
+    },
+    "MesureGrume": {
+      "LongueurReelleMM": "4645",
+      "LongueurPourCycleQuaisMM": "3600",
+      "LongueurMarchandeMM": "4500",
+      "DiametreFinBoutMM": "276",
+      "DiametreGrosBoutMM": "345",
+      "DiametreMoyenMM": "296",
+      "DiametreMilieuMM": "289",
+      "DiametreCyclindreInscritMM": "296",
+      "DiametreCubageMM": "287",
+      "LongueurCubageMM": "4500",
+      "CubageReelCM3": "177554.25",
+      "Reserve1": "608",
+      "Reserve2": "0",
+      "Reserve3": "0",
+      "Reserve4": "0"
+    },
+    "InfosSciage": {
+      "InfosSciage": {
+        "DataInfoSciage": [
+          {
+            "NombreProduits": "14",
+            "Epaisseur": "23",
+            "Largeur": "100",
+            "Longueur": "4500",
+            "Info": "2"
+          },
+          {
+            "NombreProduits": "1",
+            "Epaisseur": "23",
+            "Largeur": "129",
+            "Longueur": "4500",
+            "Info": "1040"
+          },
+          {
+            "NombreProduits": "3",
+            "Epaisseur": "23",
+            "Largeur": "373",
+            "Longueur": "2250",
+            "Info": "3088"
+          },
+          {
+            "NombreProduits": "0",
+            "Epaisseur": "0",
+            "Largeur": "0",
+            "Longueur": "0",
+            "Info": "0"
+          },
+          {
+            "NombreProduits": "0",
+            "Epaisseur": "0",
+            "Largeur": "0",
+            "Longueur": "0",
+            "Info": "0"
+          },
+          {
+            "NombreProduits": "0",
+            "Epaisseur": "0",
+            "Largeur": "0",
+            "Longueur": "0",
+            "Info": "0"
+          },
+          {
+            "NombreProduits": "0",
+            "Epaisseur": "0",
+            "Largeur": "0",
+            "Longueur": "0",
+            "Info": "0"
+          },
+          {
+            "NombreProduits": "0",
+            "Epaisseur": "0",
+            "Largeur": "0",
+            "Longueur": "0",
+            "Info": "0"
+          },
+          {
+            "NombreProduits": "0",
+            "Epaisseur": "0",
+            "Largeur": "0",
+            "Longueur": "0",
+            "Info": "0"
+          },
+          {
+            "NombreProduits": "0",
+            "Epaisseur": "0",
+            "Largeur": "0",
+            "Longueur": "0",
+            "Info": "0"
+          }
+        ]
+      }
+    },
+    "CausesRescans": {
+      "Evenements": {
+        "CauseEvenement": [
+          {
+            "Heure": "2010-01-01T00:00:00",
+            "Cause": "0"
+          },
+          {
+            "Heure": "2010-01-01T00:00:00",
+            "Cause": "0"
+          },
+          {
+            "Heure": "2010-01-01T00:00:00",
+            "Cause": "0"
+          },
+          {
+            "Heure": "2010-01-01T00:00:00",
+            "Cause": "0"
+          }
+        ]
+      }
+    },
+    "TempsDeCycle": {
+      "Time": "2019-11-13T07:25:36",
+      "TempsSciagePassage1Grume": "0",
+      "TempsRetourPassage1Grume": "0",
+      "NombrePassagePlancheSupplementairesGrume": "0",
+      "TempsSciagePassagesGrume": "0",
+      "TempsRetourPassagesGrume": "0",
+      "TempsSciagePassage1Noyau": "0",
+      "TempsRetourPassage1Noyau": "0",
+      "NombrePassagePlancheSupplementairesNoyau": "0",
+      "TempsSciagePassagesNoyau": "0",
+      "TempsRetourPassagesNoyau": "0",
+      "TempsDedoublage": "0",
+      "TempsSortieSansDedoublage": "0",
+      "Reserve1": "0",
+      "Reserve2": "0",
+      "Reserve3": "0",
+      "Reserve4": "0"
+    },
+    "InfosCycleAutomate": {
+      "DebutSciage": "2019-11-13T07:25:40.3",
+      "FinSciage": "2019-11-13T07:26:17.8",
+      "HeureGrumePretePourEjection": "2010-01-01T00:00:00",
+      "HeureEjectionSurQuaiAnalyses": "2010-01-01T00:00:00",
+      "HeureGriffageSurAnalyse": "2010-01-01T00:00:00",
+      "HeureFinRotationSurAnalyse": "2010-01-01T00:00:00",
+      "HeureFinOptimisation": "2010-01-01T00:00:00",
+      "HeureFinRotationOptimale": "2010-01-01T00:00:00",
+      "HeureTableAnalyseEnAttenteChargement": "2010-01-01T00:00:00",
+      "HeureDepartTransfertTableVersPortique": "2010-01-01T00:00:00",
+      "HeureDepartGriffageSciage": "2010-01-01T00:00:00",
+      "Temps": {
+        "int": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "VitesseSciageCanterMMin": "45",
+      "TempsSaturationEjectionTTVersTwin": "0",
+      "InfoTempsDeCycles": {
+        "int": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "InfoCycles": {
+        "int": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    },
+    "CausesInterruptionsTable": {
+      "Evenements": {
+        "CauseDureeEvenement": [
+          {
+            "Duree": "290000000",
+            "Cause": "103"
+          },
+          {
+            "Duree": "4825160000000",
+            "Cause": "103"
+          },
+          {
+            "Duree": "0",
+            "Cause": "0"
+          },
+          {
+            "Duree": "0",
+            "Cause": "0"
+          }
+        ]
+      }
+    },
+    "CausesInterruptionsSciage": {
+      "Evenements": {
+        "CauseDureeEvenement": [
+          {
+            "Duree": "0",
+            "Cause": "0"
+          },
+          {
+            "Duree": "0",
+            "Cause": "0"
+          },
+          {
+            "Duree": "0",
+            "Cause": "0"
+          },
+          {
+            "Duree": "0",
+            "Cause": "0"
+          }
+        ]
+      }
+    },
+    "InfoConfigurationLigne": {
+      "LongueurDeCampagneMM": "4500",
+      "EpaisseurPrincipaleMultilame": "23",
+      "HauteurProduitsMultilame": "100",
+      "EpaisseurSecondaireMultilame": "0",
+      "NombreProduitsSecondaires": "0",
+      "NumeroConfiguration": "63",
+      "LargeurDeligneuse1": "0",
+      "LargeurDeligneuse2": "0",
+      "LargeurDeligneuse3": "0",
+      "LargeurDeligneuse4": "0",
+      "LargeurDeligneuse5": "0",
+      "HauteurDeligneuse": "0"
+    },
+    "InfosTempsDeCycle": {
+      "HeureGrumePretePourEjection": "2019-11-12T17:57:26.8",
+      "HeureTableAnalyseEnAttenteChargement": "2019-11-12T17:59:13.4",
+      "HeureEjectionSurQuaiAnalyse": "2019-11-13T07:25:01.7",
+      "HeureDebutGriffageAnalyse": "2019-11-13T07:25:11.9",
+      "HeureFinGriffageAnalyse": "2019-11-13T07:25:14.3",
+      "HeureDebutRotationAnalyse": "2019-11-13T07:25:15.4",
+      "HeureFinRotationAnalyse": "2019-11-13T07:25:22.2",
+      "HeureFinOptimisation": "2019-11-13T07:25:26.1",
+      "HeureDebutGriffageAnalyse2": "2010-01-01T00:00:00",
+      "HeureFinGriffageAnalyse2": "2010-01-01T00:00:00",
+      "HeureDebutRotationAnalyse2": "2010-01-01T00:00:00",
+      "HeureFinRotationAnalyse2": "2010-01-01T00:00:00",
+      "HeureFinOptimisation2": "2010-01-01T00:00:00",
+      "HeureFinRotationOptimale": "2019-11-13T07:25:29.8",
+      "HeureFinDegriffageAnalyse": "2019-11-13T07:25:30.8",
+      "HeureDepartTransfertTableVersIntermediaireOuPortique": "2019-11-13T07:25:30.8",
+      "HeureTablePositionIntermediaire": "2010-01-01T00:00:00",
+      "HeureChariotSciagePositionAttenteTable": "2010-01-01T00:00:00",
+      "HeureDepartTransfertTableIntermediaireVersSciage": "2010-01-01T00:00:00",
+      "HeureDepartGriffageSciage": "2019-11-13T07:25:34.6",
+      "HeureFinGriffageSciage": "2019-11-13T07:25:37.3",
+      "HeureTableEnPositionChargement": "2010-01-01T00:00:00",
+      "Reserve1": "2010-01-01T00:00:00",
+      "Reserve2": "2010-01-01T00:00:00",
+      "Reserve3": "2010-01-01T00:00:00",
+      "Reserve4": "2010-01-01T00:00:00",
+      "Reserve5": "2010-01-01T00:00:00"
+    },
+    "InfoTempsDeCycleSciage": {
+      "PassageGrume": {
+        "PremierPassageSansPlanche": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "RetourPremierPassageSansPlanche": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "PremierPassageAvecPlanche": {
+          "Debut": "2019-11-13T07:25:40.3",
+          "Fin": "2019-11-13T07:25:52.9",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "45",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "RetourPremierPassageAvecPlanche": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "SecondPassageAvecPlanche": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "RetourSecondPassageAvecPlanche": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "TroisiemePassageAvecPlanche": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "RetourDernierPassageAvecPlancheDevantCanter": {
+          "Debut": "2019-11-13T07:25:52.9",
+          "Fin": "2019-11-13T07:25:57.5",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "45",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        }
+      },
+      "PassageNoyau": {
+        "PremierPassageSansPlanche": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "RetourPremierPassageSansPlancheSansRefente": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "RetourPremierPassageSansPlancheAvecRefente": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "PremierPassageAvecPlanche": {
+          "Debut": "2019-11-13T07:25:57.9",
+          "Fin": "2019-11-13T07:26:07.3",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "54",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "RetourPremierPassageAvecPlanche": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "SecondPassageAvecPlanche": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "RetourSecondPassageAvecPlanche": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "TroisiemePassageAvecPlanche": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "RetourDernierPassageAvecPlancheSansRefente": {
+          "Debut": "2010-01-01T00:00:00",
+          "Fin": "2010-01-01T00:00:00",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "0",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        },
+        "RetourDernierPassageAvecPlancheAvecRefente": {
+          "Debut": "2019-11-13T07:26:07.3",
+          "Fin": "2019-11-13T07:26:11.1",
+          "DureeInterruption": "0",
+          "DureeSaturationDeligneuse": "0",
+          "DureeSaturationTwin": "0",
+          "VitesseSciageMMin": "54",
+          "TempsStopAndGo": "0",
+          "Reserve": "0"
+        }
+      },
+      "EvacuationNoyauSansRefente": {
+        "Debut": "2010-01-01T00:00:00",
+        "Fin": "2010-01-01T00:00:00",
+        "DureeInterruption": "0",
+        "DureeSaturationDeligneuse": "0",
+        "DureeSaturationTwin": "0",
+        "VitesseSciageMMin": "0",
+        "TempsStopAndGo": "0",
+        "Reserve": "0"
+      },
+      "RefenteNoyau": {
+        "Debut": "2019-11-13T07:26:15.4",
+        "Fin": "2019-11-13T07:26:21.4",
+        "DureeInterruption": "0",
+        "DureeSaturationDeligneuse": "0",
+        "DureeSaturationTwin": "0",
+        "VitesseSciageMMin": "54",
+        "TempsStopAndGo": "0",
+        "Reserve": "0"
+      }
+    },
+    "Reserves": {
+      "int": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    }
+  }
+}

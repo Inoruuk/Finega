@@ -76,17 +76,18 @@ WSGI_APPLICATION = 'Finega.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-	 'default': {
-	 	'ENGINE': 'django.db.backends.sqlite3',
-	 	'NAME': os.path.join(BASE_DIR, 'defaultDB'),
-	 },
-	 'userDB': {
-	 	'ENGINE': 'django.db.backends.sqlite3',
-	 	'NAME': os.path.join(BASE_DIR, 'userDB')
-	 },
+	'default': {
+		'ENGINE': 'django.db.backends.sqlite3',
+		'NAME': os.path.join(BASE_DIR, 'defaultDB'),
+	},
+	'userDB': {
+		'ENGINE': 'django.db.backends.sqlite3',
+		'NAME': os.path.join(BASE_DIR, 'userDB')
+	},
 	'data': {
 		'ENGINE': 'djongo',
 		'NAME': 'data',
+		'ENFORCE_SCHEMA': True,
 	}
 }
 
