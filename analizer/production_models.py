@@ -277,7 +277,7 @@ class CausesRescans(models.Model):
 
 
 ########													########
-########					EVENEMENT						########
+########					DATA CYCLE						########
 ########													########
 
 
@@ -330,6 +330,16 @@ class TempsDeCycle(models.Model):
 		return 'Temps de cycle'
 
 
+class InfoTempsDeCycles(models.Model):
+	class Meta:
+		abstract = True
+
+
+class InfoCyles(models.Model):
+	class Meta:
+		abstract = True
+
+
 class InfosCycleAutomate(models.Model):
 	debut_sciage = models.DateTimeField()
 	fin_sciage = models.DateTimeField()
@@ -346,7 +356,8 @@ class InfosCycleAutomate(models.Model):
 	vitesse_sciage_canter_m_min = models.PositiveIntegerField()
 	temps_saturation_ejection_tt_vers_twin = models.PositiveIntegerField()
 #	info_temps_de_cycle = models.ArrayModelField(model_container=InfoTempsDeCycles)
-	info_cycles = models.ArrayModelField(model_container=InfoCycles)
+#	info_cycles = models.ArrayModelField(model_container=InfoCycles)
+#	pas utilisé, a modifier quand ce sera le cas
 
 	class Meta:
 		abstract = True
@@ -369,52 +380,12 @@ class InfosCycleAutomate(models.Model):
 			vitesse_sciage_canter_m_min=param['VitesseSciageCanterMMin'],
 			temps_saturation_ejection_tt_vers_twin=param['TempsSaturationEjectionTTVersTwin'],
 #			info_temps_de_cycle=param['InfoTempsDeCycles'],
-			info_cycles=param['InfoCycles']
+#			info_cycles=param['InfoCycles']
 		)
 		return info
 
 	def __str__(self):
 		return 'Info cycle automatique'
-
-
-class InfoConfigurationLigne(models.Model):
-
-	longueur_de_campagne_mm = models.PositiveIntegerField()
-	epaisseur_principale_multilame = models.PositiveIntegerField()
-	hauteur_produits_multilame = models.PositiveIntegerField()
-	epaisseur_secondaire_multilame = models.PositiveIntegerField()
-	nombre_produits_secondaires = models.PositiveIntegerField()
-	numero_configuration = models.PositiveIntegerField()
-	largeur_deligneuse1 = models.PositiveIntegerField()
-	largeur_deligneuse2 = models.PositiveIntegerField()
-	largeur_deligneuse3 = models.PositiveIntegerField()
-	largeur_deligneuse4 = models.PositiveIntegerField()
-	largeur_deligneuse5 = models.PositiveIntegerField()
-	hauteur_deligneuse = models.PositiveIntegerField()
-
-	class Meta:
-		abstract = True
-
-	@classmethod
-	def create(cls, param: dict):
-		info = cls(
-			longueur_de_campagne_mm=param['LongueurDeCampagneMM'],
-			epaisseur_principale_multilame=param['EpaisseurPrincipaleMultilame'],
-			hauteur_produits_multilame=param['HauteurProduitsMultilame'],
-			epaisseur_secondaire_multilame=param['EpaisseurSecondaireMultilame'],
-			nombre_produits_secondaires=param['NombreProduitsSecondaires'],
-			numero_configuration=param['NumeroConfiguration'],
-			largeur_deligneuse1=param['LargeurDeligneuse1'],
-			largeur_deligneuse2=param['LargeurDeligneuse2'],
-			largeur_deligneuse3=param['LargeurDeligneuse3'],
-			largeur_deligneuse4=param['LargeurDeligneuse4'],
-			largeur_deligneuse5=param['LargeurDeligneuse5'],
-			hauteur_deligneuse=param['HauteurDeligneuse']
-		)
-		return info
-
-	def __str__(self):
-		return 'InfoConfigurationLigne'
 
 
 class InfosTempsDeCycle(models.Model):
@@ -486,6 +457,55 @@ class InfosTempsDeCycle(models.Model):
 	def __str__(self):
 		return 'Info temps de cycle'
 
+########													########
+########					INFO LIGNE						########
+########													########
+
+
+class InfoConfigurationLigne(models.Model):
+
+	longueur_de_campagne_mm = models.PositiveIntegerField()
+	epaisseur_principale_multilame = models.PositiveIntegerField()
+	hauteur_produits_multilame = models.PositiveIntegerField()
+	epaisseur_secondaire_multilame = models.PositiveIntegerField()
+	nombre_produits_secondaires = models.PositiveIntegerField()
+	numero_configuration = models.PositiveIntegerField()
+	largeur_deligneuse1 = models.PositiveIntegerField()
+	largeur_deligneuse2 = models.PositiveIntegerField()
+	largeur_deligneuse3 = models.PositiveIntegerField()
+	largeur_deligneuse4 = models.PositiveIntegerField()
+	largeur_deligneuse5 = models.PositiveIntegerField()
+	hauteur_deligneuse = models.PositiveIntegerField()
+
+	class Meta:
+		abstract = True
+
+	@classmethod
+	def create(cls, param: dict):
+		info = cls(
+			longueur_de_campagne_mm=param['LongueurDeCampagneMM'],
+			epaisseur_principale_multilame=param['EpaisseurPrincipaleMultilame'],
+			hauteur_produits_multilame=param['HauteurProduitsMultilame'],
+			epaisseur_secondaire_multilame=param['EpaisseurSecondaireMultilame'],
+			nombre_produits_secondaires=param['NombreProduitsSecondaires'],
+			numero_configuration=param['NumeroConfiguration'],
+			largeur_deligneuse1=param['LargeurDeligneuse1'],
+			largeur_deligneuse2=param['LargeurDeligneuse2'],
+			largeur_deligneuse3=param['LargeurDeligneuse3'],
+			largeur_deligneuse4=param['LargeurDeligneuse4'],
+			largeur_deligneuse5=param['LargeurDeligneuse5'],
+			hauteur_deligneuse=param['HauteurDeligneuse']
+		)
+		return info
+
+	def __str__(self):
+		return 'InfoConfigurationLigne'
+
+
+########													########
+########						MAIN						########
+########													########
+
 
 class Campagne(models.Model):
 	grume_data = models.EmbeddedModelField(model_container=GrumeData)
@@ -507,3 +527,74 @@ class Campagne(models.Model):
 			info_sciage=param['DataInfoSciage']
 		)
 		return info
+
+########													########
+########				InfoTempsDeCycleSciage				########
+########													########
+
+
+class Sciage(models.Model):
+	debut = models.DateTimeField()
+	fin = models.DateTimeField()
+	duree_interruption = models.PositiveIntegerField()
+	duree_saturation_de_ligneuse = models.PositiveIntegerField()
+	duree_saturation_twin = models.PositiveIntegerField()
+	vitesse_sciage_mmin = models.PositiveIntegerField()
+	temps_stop_and_go = models.PositiveIntegerField()
+	reserve = models.PositiveIntegerField()
+
+	class Meta:
+		abstract = True
+
+	def __str__(self):
+		return 'Info temps de cycle Sciage'
+
+	@classmethod
+	def create(cls, param: dict):
+		t = cls(
+			debut=param['Debut'],
+			fin=param['Fin'],
+			duree_interruption= param['DureeInterruption'],
+			duree_saturation_de_ligneuse= param['DureeSaturationDeligneuse'],
+			duree_saturation_twin= param['DureeSaturationTwin'],
+			vitesse_sciage_mmin= param['VitesseSciageMMin'],
+			temps_stop_and_go= param['TempsStopAndGo'],
+			reserve= param['Reserve']
+		)
+		return t
+
+
+class PassageGrume(models.Model):
+
+	premier_passage_sans_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_premier_passage_sans_planche = models.EmbeddedModelField(model_container=Sciage)
+	premier_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_premier_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	second_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_second_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	troisieme_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_dernier_dassage_avec_planche_devant_canter = models.EmbeddedModelField(model_container=Sciage)
+
+	class Meta:
+		abstract = True
+
+	def __str__(self):
+		return 'Passage grume'
+
+	@classmethod
+	def create(cls, param: dict):
+		t = cls(
+			premier_passage_sans_planche= Sciage.create(param['PremierPassageSansPlanche']),
+			retour_premier_passage_sans_planche= Sciage.create(param['RetourPremierPassageSansPlanche']),
+			premier_passage_avec_planche= Sciage.create(param['PremierPassageAvecPlanche']),
+			retour_premier_passage_avec_planche= Sciage.create(param['RetourPremierPassageAvecPlanche']),
+			second_passage_avec_planche= Sciage.create(param['SecondPassageAvecPlanche']),
+			retour_second_passage_avec_planche= Sciage.create(param['RetourSecondPassageAvecPlanche']),
+			troisieme_passage_avec_planche= Sciage.create(param['TroisiemePassageAvecPlanche']),
+			retour_dernier_dassage_avec_planche_devant_canter= Sciage.create(param['RetourDernierPassageAvecPlancheDevantCanter'])
+		)
+		return t
+
+
+class PassageNoyau(models.Model):
+	pass

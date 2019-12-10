@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Campagne
+from .production_models import Campagne
 # Register your models here.
 
 admin.site.register(Campagne)
