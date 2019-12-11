@@ -1,6 +1,7 @@
 from djongo import models
 from .production_models import \
-	GrumeData, \
+	InfoGrume, \
+	MesureGrume,\
 	DataInfoSciage, \
 	CausesRescans, \
 	TempsDeCycle, \
@@ -13,7 +14,8 @@ from .production_models import \
 
 
 class Campagne(models.Model):
-	grume_data = models.EmbeddedModelField(model_container=GrumeData)
+	info_grume = models.EmbeddedModelField(model_container=InfoGrume)
+	mesure_grume = models.EmbeddedModelField(model_container=MesureGrume)
 	info_sciage = models.ArrayModelField(model_container=DataInfoSciage)
 	causes_rescans = models.EmbeddedModelField(model_container=CausesRescans)
 	temps_de_cycle = models.EmbeddedModelField(model_container=TempsDeCycle)
@@ -36,7 +38,8 @@ class Campagne(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			grume_data=GrumeData.create(param['GrumeData']),
+			info_grume=InfoGrume.create(param['InfoGrume']),
+			mesure_grume=MesureGrume.create(param['MesureGrume']),
 			info_sciage=[DataInfoSciage.create(param['DataInfoSciage'])],
 			causes_rescans=CausesRescans.create(param['CausesRescans']),
 			temps_de_cycle=TempsDeCycle.create(param['TempsDeCycle']),

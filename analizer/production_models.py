@@ -95,7 +95,7 @@ class MesureGrume(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			longueur_reelle_mm=param['LongueurRelleMM'],
+			longueur_reelle_mm=param['LongueurReelleMM'],
 			longueur_pour_cycle_quais_mm=param['LongueurPourCycleQuaisMM'],
 			longueur_marchande_mm=param['LongueurMarchandeMM'],
 			diametre_fin_bout_mm=param['DiametreFinBoutMM'],
@@ -131,7 +131,8 @@ class GrumeData(models.Model):
 	def create(cls, param: dict):
 		info = cls(
 			info_grume=InfoGrume.create(param['InfoGrume']),
-			mesure_grume=MesureGrume.create(param['MesureGrume']))
+			mesure_grume=MesureGrume.create(param['MesureGrume'])
+		)
 		return info
 
 
@@ -161,6 +162,17 @@ class DataInfoSciage(models.Model):
 			largeur=param['Largeur'],
 			longueur=param['Longueur'],
 			info=param['Info']
+		)
+		return info
+
+
+class InfosSciage(models.Model):
+	data_info_sciage = models.ArrayModelField(model_container=DataInfoSciage)
+
+	@classmethod
+	def create(cls, param: dict):
+		info = cls(
+			data_info_sciage=[DataInfoSciage.create(data) for data in param['DataInfoSciage']]
 		)
 		return info
 
@@ -220,10 +232,10 @@ class Evenements(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			cause_duree_evenement=CauseDureeEvenement.create(param['CauseDureeEvenement'])
-			if param['CauseDureeEvenement'] else None,
-			cause_evenement=CauseEvenement.create(param['CauseEvenement'])
-			if param['CauseEvenement'] else None
+			cause_duree_evenement=[CauseDureeEvenement.create(data) for data in param['CauseDureeEvenement']]
+			if 'CauseDureeEvenement' in param else None,
+			cause_evenement=[CauseEvenement.create(data) for data in param['CauseEvenement']]
+			if 'CauseEvenement' in param else None
 		)
 		return info
 
@@ -267,7 +279,7 @@ class CausesInterruptionsSciage(models.Model):
 
 
 class CausesRescans(models.Model):
-	evenement = models.ArrayModelField(model_container=Evenements)
+	evenement = models.EmbeddedModelField(model_container=Evenements)
 
 	class Meta:
 		abstract = True
@@ -275,7 +287,7 @@ class CausesRescans(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			evenement=[Evenements.create(param['Evenements'])]
+			evenement=Evenements.create(param['Evenements'])
 		)
 		return info
 
@@ -435,7 +447,7 @@ class InfosTempsDeCycle(models.Model):
 			heure_fin_rotation_analyse2=param['HeureFinRotationAnalyse2'],
 			heure_fin_optimisation2=param['HeureFinOptimisation2'],
 			heure_fin_rotation_optimale=param['HeureFinRotationOptimale'],
-			heure_de_fin_griffage_analyse=param['HeureFinDegriffageAnalyse'],
+			heure_fin_de_griffage_analyse=param['HeureFinDegriffageAnalyse'],
 			depart_transfert_table_vers_intermediaire_portique=param[
 				'HeureDepartTransfertTableVersIntermediaireOuPortique'],
 			heure_table_position_intermediaire=param['HeureTablePositionIntermediaire'],
@@ -577,7 +589,8 @@ class PassageNoyau(models.Model):
 	second_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
 	retour_second_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
 	troisieme_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
-	retour_dernier_dassage_avec_planche_devant_canter = models.EmbeddedModelField(model_container=Sciage)
+	retour_dernier_passage_avec_planche_sans_refente = models.EmbeddedModelField(model_container=Sciage)
+	retour_dernier_passage_avec_planche_avec_refente = models.EmbeddedModelField(model_container=Sciage)
 
 	class Meta:
 		abstract = True
@@ -592,7 +605,7 @@ class PassageNoyau(models.Model):
 			retour_premier_passage_sans_planche_sans_refente=Sciage.create(
 				param['RetourPremierPassageSansPlancheSansRefente']),
 			retour_premier_passage_sans_planche_avec_refente=Sciage.create(
-				param['RetourPremierPassageAvecPlancheSansRefente']),
+				param['RetourPremierPassageSansPlancheAvecRefente']),
 			premier_passage_avec_planche=Sciage.create(param['PremierPassageAvecPlanche']),
 			retour_premier_passage_avec_planche=Sciage.create(param['RetourPremierPassageAvecPlanche']),
 			second_passage_avec_planche=Sciage.create(param['SecondPassageAvecPlanche']),
