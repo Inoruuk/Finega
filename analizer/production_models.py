@@ -28,24 +28,27 @@ class InfoCycles(models.Model):
 		abstract = True
 
 
-########													########
-########			PAS ENCORE UTILISER, A REVOIR			########
-########													########
+class InfoTempsDeCycles(models.Model):
+	class Meta:
+		abstract = True
+
+
+class InfoCyles(models.Model):
+	class Meta:
+		abstract = True
 
 
 ########													########
 ########					DATA GRUME						########
 ########													########
 
-
 class InfoGrume(models.Model):
-
 	numero_grume = models.PositiveIntegerField()
 	essence = models.PositiveIntegerField()
 	qualite = models.PositiveIntegerField()
-	#numero_approvisionnement  = models.PositiveIntegerField()
+	# numero_approvisionnement  = models.PositiveIntegerField()
 	numero_campagne = models.PositiveIntegerField()
-	#commentaire = models.TextField()
+	# commentaire = models.TextField()
 	reserve = models.PositiveIntegerField()
 
 	class Meta:
@@ -125,10 +128,10 @@ class GrumeData(models.Model):
 		return 'Données des Grume de' + self.info_grume.__str__()
 
 	@classmethod
-	def create(cls, info: InfoGrume, mesure: MesureGrume):
+	def create(cls, param: dict):
 		info = cls(
-			info_grume=info,
-			mesure_grume=mesure)
+			info_grume=InfoGrume.create(param['InfoGrume']),
+			mesure_grume=MesureGrume.create(param['MesureGrume']))
 		return info
 
 
@@ -217,12 +220,16 @@ class Evenements(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			cause_duree_evenement=param['CauseDureeEvenement']
+			cause_duree_evenement=CauseDureeEvenement.create(param['CauseDureeEvenement'])
+			if param['CauseDureeEvenement'] else None,
+			cause_evenement=CauseEvenement.create(param['CauseEvenement'])
+			if param['CauseEvenement'] else None
 		)
 		return info
 
 	def __str__(self):
-		return self.cause_duree_evenement.__str__()
+		return self.cause_duree_evenement.__str__() if self.cause_duree_evenement is not None \
+			else self.cause_evenement.__str__()
 
 
 class CausesInterruptionsTable(models.Model):
@@ -234,7 +241,7 @@ class CausesInterruptionsTable(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			evenement=param['Evenements']
+			evenement=Evenements.create(param['Evenements'])
 		)
 		return info
 
@@ -251,7 +258,7 @@ class CausesInterruptionsSciage(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			evenement=param['Evenements']
+			evenement=Evenements.create(param['Evenements'])
 		)
 		return info
 
@@ -260,7 +267,7 @@ class CausesInterruptionsSciage(models.Model):
 
 
 class CausesRescans(models.Model):
-	evenement = models.EmbeddedModelField(model_container=Evenements)
+	evenement = models.ArrayModelField(model_container=Evenements)
 
 	class Meta:
 		abstract = True
@@ -268,7 +275,7 @@ class CausesRescans(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			evenement=param['Evenements']
+			evenement=[Evenements.create(param['Evenements'])]
 		)
 		return info
 
@@ -330,16 +337,6 @@ class TempsDeCycle(models.Model):
 		return 'Temps de cycle'
 
 
-class InfoTempsDeCycles(models.Model):
-	class Meta:
-		abstract = True
-
-
-class InfoCyles(models.Model):
-	class Meta:
-		abstract = True
-
-
 class InfosCycleAutomate(models.Model):
 	debut_sciage = models.DateTimeField()
 	fin_sciage = models.DateTimeField()
@@ -352,12 +349,13 @@ class InfosCycleAutomate(models.Model):
 	heure_table_analyse_en_attente_chargement = models.DateTimeField()
 	heure_depart_transfert_table_vers_portique = models.DateTimeField()
 	heure_depart_griffage_sciage = models.DateTimeField()
-	temps = models.ArrayModelField(model_container=Temps)
+	#	temps = models.ArrayModelField(model_container=Temps)
 	vitesse_sciage_canter_m_min = models.PositiveIntegerField()
 	temps_saturation_ejection_tt_vers_twin = models.PositiveIntegerField()
-#	info_temps_de_cycle = models.ArrayModelField(model_container=InfoTempsDeCycles)
-#	info_cycles = models.ArrayModelField(model_container=InfoCycles)
-#	pas utilisé, a modifier quand ce sera le cas
+
+	#	info_temps_de_cycle = models.ArrayModelField(model_container=InfoTempsDeCycles)
+	#	info_cycles = models.ArrayModelField(model_container=InfoCycles)
+	#	pas utilisé, a modifier quand ce sera le cas
 
 	class Meta:
 		abstract = True
@@ -376,11 +374,11 @@ class InfosCycleAutomate(models.Model):
 			heure_table_analyse_en_attente_chargement=param['HeureTableAnalyseEnAttenteChargement'],
 			heure_depart_transfert_table_vers_portique=param['HeureDepartTransfertTableVersPortique'],
 			heure_depart_griffage_sciage=param['HeureDepartGriffageSciage'],
-			temps=param['Temps'],
+			#			temps=param['Temps'],
 			vitesse_sciage_canter_m_min=param['VitesseSciageCanterMMin'],
 			temps_saturation_ejection_tt_vers_twin=param['TempsSaturationEjectionTTVersTwin'],
-#			info_temps_de_cycle=param['InfoTempsDeCycles'],
-#			info_cycles=param['InfoCycles']
+			#			info_temps_de_cycle=param['InfoTempsDeCycles'],
+			#			info_cycles=param['InfoCycles']
 		)
 		return info
 
@@ -389,7 +387,6 @@ class InfosCycleAutomate(models.Model):
 
 
 class InfosTempsDeCycle(models.Model):
-
 	heure_grume_prete_pour_ejection = models.DateTimeField()
 	heure_table_analyse_en_attente_chargement = models.DateTimeField()
 	heure_ejection_sur_quai_analyse = models.DateTimeField()
@@ -439,7 +436,8 @@ class InfosTempsDeCycle(models.Model):
 			heure_fin_optimisation2=param['HeureFinOptimisation2'],
 			heure_fin_rotation_optimale=param['HeureFinRotationOptimale'],
 			heure_de_fin_griffage_analyse=param['HeureFinDegriffageAnalyse'],
-			depart_transfert_table_vers_intermediaire_portique=param['HeureDepartTransfertTableVersIntermediaireOuPortique'],
+			depart_transfert_table_vers_intermediaire_portique=param[
+				'HeureDepartTransfertTableVersIntermediaireOuPortique'],
 			heure_table_position_intermediaire=param['HeureTablePositionIntermediaire'],
 			heure_chariot_sciage_position_attente_table=param['HeureChariotSciagePositionAttenteTable'],
 			depart_transfert_table_intermediaire_vers_sciage=param['HeureDepartTransfertTableIntermediaireVersSciage'],
@@ -457,13 +455,13 @@ class InfosTempsDeCycle(models.Model):
 	def __str__(self):
 		return 'Info temps de cycle'
 
+
 ########													########
 ########					INFO LIGNE						########
 ########													########
 
 
 class InfoConfigurationLigne(models.Model):
-
 	longueur_de_campagne_mm = models.PositiveIntegerField()
 	epaisseur_principale_multilame = models.PositiveIntegerField()
 	hauteur_produits_multilame = models.PositiveIntegerField()
@@ -503,32 +501,6 @@ class InfoConfigurationLigne(models.Model):
 
 
 ########													########
-########						MAIN						########
-########													########
-
-
-class Campagne(models.Model):
-	grume_data = models.EmbeddedModelField(model_container=GrumeData)
-	info_sciage = models.ArrayModelField(model_container=DataInfoSciage)
-
-	objects = models.DjongoManager()
-
-	def save(self):
-		t = super().save(using='data')
-		return t
-
-	def __str__(self):
-		return 'Infomartion de production de la campagne'
-
-	@classmethod
-	def create(cls, param: dict):
-		info = cls(
-			grume_data=param['GrumeData'],
-			info_sciage=param['DataInfoSciage']
-		)
-		return info
-
-########													########
 ########				InfoTempsDeCycleSciage				########
 ########													########
 
@@ -554,18 +526,17 @@ class Sciage(models.Model):
 		t = cls(
 			debut=param['Debut'],
 			fin=param['Fin'],
-			duree_interruption= param['DureeInterruption'],
-			duree_saturation_de_ligneuse= param['DureeSaturationDeligneuse'],
-			duree_saturation_twin= param['DureeSaturationTwin'],
-			vitesse_sciage_mmin= param['VitesseSciageMMin'],
-			temps_stop_and_go= param['TempsStopAndGo'],
-			reserve= param['Reserve']
+			duree_interruption=param['DureeInterruption'],
+			duree_saturation_de_ligneuse=param['DureeSaturationDeligneuse'],
+			duree_saturation_twin=param['DureeSaturationTwin'],
+			vitesse_sciage_mmin=param['VitesseSciageMMin'],
+			temps_stop_and_go=param['TempsStopAndGo'],
+			reserve=param['Reserve']
 		)
 		return t
 
 
 class PassageGrume(models.Model):
-
 	premier_passage_sans_planche = models.EmbeddedModelField(model_container=Sciage)
 	retour_premier_passage_sans_planche = models.EmbeddedModelField(model_container=Sciage)
 	premier_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
@@ -584,17 +555,75 @@ class PassageGrume(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		t = cls(
-			premier_passage_sans_planche= Sciage.create(param['PremierPassageSansPlanche']),
-			retour_premier_passage_sans_planche= Sciage.create(param['RetourPremierPassageSansPlanche']),
-			premier_passage_avec_planche= Sciage.create(param['PremierPassageAvecPlanche']),
-			retour_premier_passage_avec_planche= Sciage.create(param['RetourPremierPassageAvecPlanche']),
-			second_passage_avec_planche= Sciage.create(param['SecondPassageAvecPlanche']),
-			retour_second_passage_avec_planche= Sciage.create(param['RetourSecondPassageAvecPlanche']),
-			troisieme_passage_avec_planche= Sciage.create(param['TroisiemePassageAvecPlanche']),
-			retour_dernier_dassage_avec_planche_devant_canter= Sciage.create(param['RetourDernierPassageAvecPlancheDevantCanter'])
+			premier_passage_sans_planche=Sciage.create(param['PremierPassageSansPlanche']),
+			retour_premier_passage_sans_planche=Sciage.create(param['RetourPremierPassageSansPlanche']),
+			premier_passage_avec_planche=Sciage.create(param['PremierPassageAvecPlanche']),
+			retour_premier_passage_avec_planche=Sciage.create(param['RetourPremierPassageAvecPlanche']),
+			second_passage_avec_planche=Sciage.create(param['SecondPassageAvecPlanche']),
+			retour_second_passage_avec_planche=Sciage.create(param['RetourSecondPassageAvecPlanche']),
+			troisieme_passage_avec_planche=Sciage.create(param['TroisiemePassageAvecPlanche']),
+			retour_dernier_dassage_avec_planche_devant_canter=Sciage.create(
+				param['RetourDernierPassageAvecPlancheDevantCanter'])
 		)
 		return t
 
 
 class PassageNoyau(models.Model):
-	pass
+	premier_passage_sans_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_premier_passage_sans_planche_sans_refente = models.EmbeddedModelField(model_container=Sciage)
+	retour_premier_passage_sans_planche_avec_refente = models.EmbeddedModelField(model_container=Sciage)
+	premier_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_premier_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	second_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_second_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	troisieme_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_dernier_dassage_avec_planche_devant_canter = models.EmbeddedModelField(model_container=Sciage)
+
+	class Meta:
+		abstract = True
+
+	def __str__(self):
+		return 'Passage noyau'
+
+	@classmethod
+	def create(cls, param: dict):
+		t = cls(
+			premier_passage_sans_planche=Sciage.create(param['PremierPassageSansPlanche']),
+			retour_premier_passage_sans_planche_sans_refente=Sciage.create(
+				param['RetourPremierPassageSansPlancheSansRefente']),
+			retour_premier_passage_sans_planche_avec_refente=Sciage.create(
+				param['RetourPremierPassageAvecPlancheSansRefente']),
+			premier_passage_avec_planche=Sciage.create(param['PremierPassageAvecPlanche']),
+			retour_premier_passage_avec_planche=Sciage.create(param['RetourPremierPassageAvecPlanche']),
+			second_passage_avec_planche=Sciage.create(param['SecondPassageAvecPlanche']),
+			retour_second_passage_avec_planche=Sciage.create(param['RetourSecondPassageAvecPlanche']),
+			troisieme_passage_avec_planche=Sciage.create(param['TroisiemePassageAvecPlanche']),
+			retour_dernier_passage_avec_planche_sans_refente=Sciage.create(
+				param['RetourDernierPassageAvecPlancheSansRefente']),
+			retour_dernier_passage_avec_planche_avec_refente=Sciage.create(
+				param['RetourDernierPassageAvecPlancheAvecRefente'])
+		)
+		return t
+
+
+class InfoTempsDeCycleSciage(models.Model):
+	passage_grume = models.EmbeddedModelField(model_container=PassageGrume)
+	passage_noyau = models.EmbeddedModelField(model_container=PassageNoyau)
+	evacuation_noyau_sans_refente = models.EmbeddedModelField(model_container=Sciage)
+	refente_noyau = models.EmbeddedModelField(model_container=Sciage)
+
+	class Meta:
+		abstract = True
+
+	def __str__(self):
+		return 'Info temps de cycle sciage'
+
+	@classmethod
+	def create(cls, param: dict):
+		t = cls(
+			passage_grume=PassageGrume.create(param['PassageGrume']),
+			passage_noyau=PassageNoyau.create(param['PassageNoyau']),
+			evacuation_noyau_sans_refente=Sciage.create(param['EvacuationNoyauSansRefente']),
+			refente_noyau=Sciage.create(param['RefenteNoyau'])
+		)
+		return t
