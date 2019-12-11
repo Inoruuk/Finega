@@ -40,7 +40,7 @@ class Campagne(models.Model):
 		info = cls(
 			info_grume=InfoGrume.create(param['InfoGrume']),
 			mesure_grume=MesureGrume.create(param['MesureGrume']),
-			info_sciage=[DataInfoSciage.create(param['DataInfoSciage'])],
+			info_sciage=[DataInfoSciage.create(param['InfosSciage']['InfosSciage'])],
 			causes_rescans=CausesRescans.create(param['CausesRescans']),
 			temps_de_cycle=TempsDeCycle.create(param['TempsDeCycle']),
 			infos_cycle_automate=InfosCycleAutomate.create(param['InfosCycleAutomate']),
