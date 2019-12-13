@@ -1,5 +1,8 @@
 from djongo import models
-
+import re
+from datetime import datetime
+#pattern use to change 2019-11-13T07:25:36 to datetime object
+pattern = re.compile('(\d+)')
 
 # Create your models here.
 
@@ -83,7 +86,7 @@ class MesureGrume(models.Model):
 	diametre_cyclindre_inscrit_mm = models.PositiveIntegerField()
 	diametre_cubage_mm = models.PositiveIntegerField()
 	longueur_cubage_mm = models.PositiveIntegerField()
-	cubage_reel_cm3 = models.PositiveIntegerField()
+	cubage_reel_cm3 = models.FloatField()
 	reserve1 = models.PositiveIntegerField()
 	reserve2 = models.PositiveIntegerField()
 	reserve3 = models.PositiveIntegerField()
@@ -176,6 +179,9 @@ class InfosSciage(models.Model):
 		)
 		return info
 
+	class Meta:
+		abstract = True
+
 
 ########													########
 ########					EVENEMENT						########
@@ -233,9 +239,9 @@ class Evenements(models.Model):
 	def create(cls, param: dict):
 		info = cls(
 			cause_duree_evenement=[CauseDureeEvenement.create(data) for data in param['CauseDureeEvenement']]
-			if 'CauseDureeEvenement' in param else None,
+			if 'CauseDureeEvenement' in param else [],
 			cause_evenement=[CauseEvenement.create(data) for data in param['CauseEvenement']]
-			if 'CauseEvenement' in param else None
+			if 'CauseEvenement' in param else []
 		)
 		return info
 
@@ -324,8 +330,10 @@ class TempsDeCycle(models.Model):
 
 	@classmethod
 	def create(cls, param: dict):
+		pat = re.findall(pattern, param['Time'])
+		time = datetime(int(pat[0]), int(pat[1]), int(pat[2]), int(pat[3]), int(pat[4]), int(pat[5]))
 		info = cls(
-			time=param['Time'],
+			time=time,
 			temps_sciage_passage_1grume=param['TempsSciagePassage1Grume'],
 			temps_retour_passage_1grume=param['TempsRetourPassage1Grume'],
 			nombre_passage_planche_supplementaires_grume=param['NombrePassagePlancheSupplementairesGrume'],

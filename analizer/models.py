@@ -37,10 +37,11 @@ class Campagne(models.Model):
 
 	@classmethod
 	def create(cls, param: dict):
+#		doc = [DataInfoSciage.create(x) for x in param['Campagne']['InfosSciage']['InfosSciage']['DataInfoSciage']]
 		info = cls(
 			info_grume=InfoGrume.create(param['InfoGrume']),
 			mesure_grume=MesureGrume.create(param['MesureGrume']),
-			info_sciage=[DataInfoSciage.create(param['InfosSciage']['InfosSciage'])],
+			info_sciage=[DataInfoSciage.create(x) for x in param['InfosSciage']['InfosSciage']['DataInfoSciage']],
 			causes_rescans=CausesRescans.create(param['CausesRescans']),
 			temps_de_cycle=TempsDeCycle.create(param['TempsDeCycle']),
 			infos_cycle_automate=InfosCycleAutomate.create(param['InfosCycleAutomate']),
