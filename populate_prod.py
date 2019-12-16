@@ -11,5 +11,6 @@ import json
 with open('data.json') as j:
 	data = json.load(j)
 
-cp = Campagne.create(data['Campagne'])
-cp.save()
+for y in data['DataInfoGestionProductionCollection']['DatasInfoGestionProduction']['DataInfoGestionProduction']:
+	cp = Campagne.create(y)
+	cp.save()
