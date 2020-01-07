@@ -2,7 +2,7 @@ from djongo import models
 from .production_models import \
 	InfoGrume, \
 	MesureGrume,\
-	DataInfoSciage, \
+	InfosSciage, \
 	CausesRescans, \
 	TempsDeCycle, \
 	InfosCycleAutomate, \
@@ -16,7 +16,7 @@ from .production_models import \
 class Campagne(models.Model):
 	info_grume = models.EmbeddedModelField(model_container=InfoGrume)
 	mesure_grume = models.EmbeddedModelField(model_container=MesureGrume)
-	info_sciage = models.ArrayModelField(model_container=DataInfoSciage)
+	info_sciage = models.EmbeddedModelField(model_container=InfosSciage)
 	causes_rescans = models.EmbeddedModelField(model_container=CausesRescans)
 	temps_de_cycle = models.EmbeddedModelField(model_container=TempsDeCycle)
 	infos_cycle_automate = models.EmbeddedModelField(model_container=InfosCycleAutomate)
@@ -37,11 +37,11 @@ class Campagne(models.Model):
 
 	@classmethod
 	def create(cls, param: dict):
-#		doc = [DataInfoSciage.create(x) for x in param['Campagne']['InfosSciage']['InfosSciage']['DataInfoSciage']]
+		#		doc = [DataInfoSciage.create(x) for x in param['Campagne']['InfosSciage']['InfosSciage']['DataInfoSciage']]
 		info = cls(
 			info_grume=InfoGrume.create(param['InfoGrume']),
 			mesure_grume=MesureGrume.create(param['MesureGrume']),
-			info_sciage=[DataInfoSciage.create(x) for x in param['InfosSciage']['InfosSciage']['DataInfoSciage']],
+			info_sciage=InfosSciage.create(param['InfosSciage']),
 			causes_rescans=CausesRescans.create(param['CausesRescans']),
 			temps_de_cycle=TempsDeCycle.create(param['TempsDeCycle']),
 			infos_cycle_automate=InfosCycleAutomate.create(param['InfosCycleAutomate']),

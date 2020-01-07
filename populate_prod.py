@@ -8,9 +8,9 @@ from analizer.models import Campagne
 import json
 
 
-with open('data.json') as j:
+with open('2019_10_1.json') as j:
 	data = json.load(j)
 
-for y in data['DataInfoGestionProductionCollection']['DatasInfoGestionProduction']['DataInfoGestionProduction']:
+for y in data['DatasInfoGestionProduction']:
 	cp = Campagne.create(y)
 	cp.save()

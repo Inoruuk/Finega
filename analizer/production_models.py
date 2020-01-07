@@ -60,11 +60,11 @@ class InfoGrume(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			numero_grume=param['NumeroGrume'],
-			essence=param['Essence'],
-			qualite=param['Qualite'],
-			numero_campagne=param['NumeroCampagne'],
-			reserve=param['Reserve']
+			numero_grume=int(param['NumeroGrume']),
+			essence=int(param['Essence']),
+			qualite=int(param['Qualite']),
+			numero_campagne=int(param['NumeroCampagne']),
+			reserve=int(param['Reserve'])
 		)
 		return info
 
@@ -98,45 +98,26 @@ class MesureGrume(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			longueur_reelle_mm=param['LongueurReelleMM'],
-			longueur_pour_cycle_quais_mm=param['LongueurPourCycleQuaisMM'],
-			longueur_marchande_mm=param['LongueurMarchandeMM'],
-			diametre_fin_bout_mm=param['DiametreFinBoutMM'],
-			diametre_gros_bout_mm=param['DiametreGrosBoutMM'],
-			diametre_moyen_mm=param['DiametreMoyenMM'],
-			diametre_milieu_mm=param['DiametreMilieuMM'],
-			diametre_cyclindre_inscrit_mm=param['DiametreCyclindreInscritMM'],
-			diametre_cubage_mm=param['DiametreCubageMM'],
-			longueur_cubage_mm=param['LongueurCubageMM'],
-			cubage_reel_cm3=param['CubageReelCM3'],
-			reserve1=param['Reserve1'],
-			reserve2=param['Reserve2'],
-			reserve3=param['Reserve3'],
-			reserve4=param['Reserve4']
+			longueur_reelle_mm=int(param['LongueurReelleMM']),
+			longueur_pour_cycle_quais_mm=int(param['LongueurPourCycleQuaisMM']),
+			longueur_marchande_mm=int(param['LongueurMarchandeMM']),
+			diametre_fin_bout_mm=int(param['DiametreFinBoutMM']),
+			diametre_gros_bout_mm=int(param['DiametreGrosBoutMM']),
+			diametre_moyen_mm=int(param['DiametreMoyenMM']),
+			diametre_milieu_mm=int(param['DiametreMilieuMM']),
+			diametre_cyclindre_inscrit_mm=int(param['DiametreCyclindreInscritMM']),
+			diametre_cubage_mm=int(param['DiametreCubageMM']),
+			longueur_cubage_mm=int(param['LongueurCubageMM']),
+			cubage_reel_cm3=float(param['CubageReelCM3']),
+			reserve1=int(param['Reserve1']),
+			reserve2=int(param['Reserve2']),
+			reserve3=int(param['Reserve3']),
+			reserve4=int(param['Reserve4'])
 		)
 		return info
 
 	def __str__(self):
 		return 'Mesure des grumes en MM en CM3'
-
-
-class GrumeData(models.Model):
-	info_grume = models.EmbeddedModelField(model_container=InfoGrume)
-	mesure_grume = models.EmbeddedModelField(model_container=MesureGrume)
-
-	class Meta:
-		abstract = True
-
-	def __str__(self):
-		return 'Données des Grume de' + self.info_grume.__str__()
-
-	@classmethod
-	def create(cls, param: dict):
-		info = cls(
-			info_grume=InfoGrume.create(param['InfoGrume']),
-			mesure_grume=MesureGrume.create(param['MesureGrume'])
-		)
-		return info
 
 
 ########													########
@@ -160,11 +141,11 @@ class DataInfoSciage(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			nombre_produits=param['NombreProduits'],
-			epaisseur=param['Epaisseur'],
-			largeur=param['Largeur'],
-			longueur=param['Longueur'],
-			info=param['Info']
+			nombre_produits=int(param['NombreProduits']),
+			epaisseur=int(param['Epaisseur']),
+			largeur=int(param['Largeur']),
+			longueur=int(param['Longueur']),
+			info=int(param['Info'])
 		)
 		return info
 
@@ -175,7 +156,7 @@ class InfosSciage(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			data_info_sciage=[DataInfoSciage.create(data) for data in param['DataInfoSciage']]
+			data_info_sciage=[DataInfoSciage.create(data) for data in param['InfosSciage']]
 		)
 		return info
 
@@ -188,9 +169,26 @@ class InfosSciage(models.Model):
 ########													########
 
 
-class CauseEvenement(models.Model):
-	# datetime(2015, 10, 09, 23, 55, 59, 342380, w/e) (year, month, day, hour, min, sec, microsec, timezone)
-	# 'regex' pour recup le datetime du fichier XML = \d+
+class DureeEvenement(models.Model):
+	duree = models.TimeField()
+	cause = models.PositiveIntegerField()
+
+	class Meta:
+		abstract = True
+
+	@classmethod
+	def create(cls, param: dict):
+		info = cls(
+			duree=param['Duree'], # quel type?
+			cause=int(param['Cause'])
+		)
+		return info
+
+	def __str__(self):
+		return 'La durée est de %s et la cause est %d' % (str(self.duree), self.cause)
+
+
+class HeureEvenement(models.Model):
 	heure = models.DateTimeField()
 	cause = models.PositiveIntegerField()
 
@@ -200,58 +198,17 @@ class CauseEvenement(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			heure=param['Heure'],
-			cause=param['Cause']
+			heure=param['Heure'], # quel type?
+			cause=int(param['Cause'])
 		)
 		return info
 
 	def __str__(self):
-		return 'Evenement causé a %s de cause %s' % (self.heure, self.cause)
-
-
-class CauseDureeEvenement(models.Model):
-	duree = models.PositiveIntegerField()
-	cause = models.PositiveIntegerField()
-
-	class Meta:
-		abstract = True
-
-	@classmethod
-	def create(cls, param: dict):
-		info = cls(
-			duree=param['Duree'],
-			cause=param['Cause']
-		)
-		return info
-
-	def __str__(self):
-		return 'Evenement de durée %s de cause %s' % (self.duree, self.cause)
-
-
-class Evenements(models.Model):
-	cause_duree_evenement = models.ArrayModelField(model_container=CauseDureeEvenement, null=True)
-	cause_evenement = models.ArrayModelField(model_container=CauseEvenement, null=True)
-
-	class Meta:
-		abstract = True
-
-	@classmethod
-	def create(cls, param: dict):
-		info = cls(
-			cause_duree_evenement=[CauseDureeEvenement.create(data) for data in param['CauseDureeEvenement']]
-			if 'CauseDureeEvenement' in param else [],
-			cause_evenement=[CauseEvenement.create(data) for data in param['CauseEvenement']]
-			if 'CauseEvenement' in param else []
-		)
-		return info
-
-	def __str__(self):
-		return self.cause_duree_evenement.__str__() if self.cause_duree_evenement is not None \
-			else self.cause_evenement.__str__()
+		return "L'heure est de %s et la cause est %d" % (str(self.heure), self.cause)
 
 
 class CausesInterruptionsTable(models.Model):
-	evenement = models.EmbeddedModelField(model_container=Evenements)
+	evenement = models.ArrayModelField(model_container=DureeEvenement)
 
 	class Meta:
 		abstract = True
@@ -259,7 +216,7 @@ class CausesInterruptionsTable(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			evenement=Evenements.create(param['Evenements'])
+			evenement=[DureeEvenement.create(data) for data in param['Evenements']]
 		)
 		return info
 
@@ -268,7 +225,7 @@ class CausesInterruptionsTable(models.Model):
 
 
 class CausesInterruptionsSciage(models.Model):
-	evenement = models.EmbeddedModelField(model_container=Evenements)
+	evenement = models.ArrayModelField(model_container=DureeEvenement)
 
 	class Meta:
 		abstract = True
@@ -276,7 +233,7 @@ class CausesInterruptionsSciage(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			evenement=Evenements.create(param['Evenements'])
+			evenement=[DureeEvenement.create(data) for data in param['Evenements']]
 		)
 		return info
 
@@ -285,7 +242,7 @@ class CausesInterruptionsSciage(models.Model):
 
 
 class CausesRescans(models.Model):
-	evenement = models.EmbeddedModelField(model_container=Evenements)
+	evenement = models.ArrayModelField(model_container=HeureEvenement)
 
 	class Meta:
 		abstract = True
@@ -293,7 +250,7 @@ class CausesRescans(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			evenement=Evenements.create(param['Evenements'])
+			evenement=[HeureEvenement.create(data) for data in param['Evenements']]
 		)
 		return info
 
@@ -334,22 +291,22 @@ class TempsDeCycle(models.Model):
 		time = datetime(int(pat[0]), int(pat[1]), int(pat[2]), int(pat[3]), int(pat[4]), int(pat[5]))
 		info = cls(
 			time=time,
-			temps_sciage_passage_1grume=param['TempsSciagePassage1Grume'],
-			temps_retour_passage_1grume=param['TempsRetourPassage1Grume'],
-			nombre_passage_planche_supplementaires_grume=param['NombrePassagePlancheSupplementairesGrume'],
-			temps_sciage_passages_grume=param['TempsSciagePassagesGrume'],
-			temps_retour_passages_grume=param['TempsRetourPassagesGrume'],
-			temps_sciage_passage_1Noyau=param['TempsSciagePassage1Noyau'],
-			temps_retour_passage_1noyau=param['TempsRetourPassage1Noyau'],
-			nombre_passage_planche_supplementaires_noyau=param['NombrePassagePlancheSupplementairesNoyau'],
-			temps_sciage_passages_noyau=param['TempsSciagePassagesNoyau'],
-			temps_retour_passages_noyau=param['TempsRetourPassagesNoyau'],
-			temps_dedoublage=param['TempsDedoublage'],
-			temps_sortie_sans_dedoublage=param['TempsSortieSansDedoublage'],
-			reserve1=param['Reserve1'],
-			reserve2=param['Reserve2'],
-			reserve3=param['Reserve3'],
-			reserve4=param['Reserve4']
+			temps_sciage_passage_1grume=int(param['TempsSciagePassage1Grume']),
+			temps_retour_passage_1grume=int(param['TempsRetourPassage1Grume']),
+			nombre_passage_planche_supplementaires_grume=int(param['NombrePassagePlancheSupplementairesGrume']),
+			temps_sciage_passages_grume=int(param['TempsSciagePassagesGrume']),
+			temps_retour_passages_grume=int(param['TempsRetourPassagesGrume']),
+			temps_sciage_passage_1Noyau=int(param['TempsSciagePassage1Noyau']),
+			temps_retour_passage_1noyau=int(param['TempsRetourPassage1Noyau']),
+			nombre_passage_planche_supplementaires_noyau=int(param['NombrePassagePlancheSupplementairesNoyau']),
+			temps_sciage_passages_noyau=int(param['TempsSciagePassagesNoyau']),
+			temps_retour_passages_noyau=int(param['TempsRetourPassagesNoyau']),
+			temps_dedoublage=int(param['TempsDedoublage']),
+			temps_sortie_sans_dedoublage=int(param['TempsSortieSansDedoublage']),
+			reserve1=int(param['Reserve1']),
+			reserve2=int(param['Reserve2']),
+			reserve3=int(param['Reserve3']),
+			reserve4=int(param['Reserve4'])
 		)
 		return info
 
@@ -395,8 +352,8 @@ class InfosCycleAutomate(models.Model):
 			heure_depart_transfert_table_vers_portique=param['HeureDepartTransfertTableVersPortique'],
 			heure_depart_griffage_sciage=param['HeureDepartGriffageSciage'],
 			#			temps=param['Temps'],
-			vitesse_sciage_canter_m_min=param['VitesseSciageCanterMMin'],
-			temps_saturation_ejection_tt_vers_twin=param['TempsSaturationEjectionTTVersTwin'],
+			vitesse_sciage_canter_m_min=int(param['VitesseSciageCanterMMin']),
+			temps_saturation_ejection_tt_vers_twin=int(param['TempsSaturationEjectionTTVersTwin']),
 			#			info_temps_de_cycle=param['InfoTempsDeCycles'],
 			#			info_cycles=param['InfoCycles']
 		)
@@ -501,18 +458,18 @@ class InfoConfigurationLigne(models.Model):
 	@classmethod
 	def create(cls, param: dict):
 		info = cls(
-			longueur_de_campagne_mm=param['LongueurDeCampagneMM'],
-			epaisseur_principale_multilame=param['EpaisseurPrincipaleMultilame'],
-			hauteur_produits_multilame=param['HauteurProduitsMultilame'],
-			epaisseur_secondaire_multilame=param['EpaisseurSecondaireMultilame'],
-			nombre_produits_secondaires=param['NombreProduitsSecondaires'],
-			numero_configuration=param['NumeroConfiguration'],
-			largeur_deligneuse1=param['LargeurDeligneuse1'],
-			largeur_deligneuse2=param['LargeurDeligneuse2'],
-			largeur_deligneuse3=param['LargeurDeligneuse3'],
-			largeur_deligneuse4=param['LargeurDeligneuse4'],
-			largeur_deligneuse5=param['LargeurDeligneuse5'],
-			hauteur_deligneuse=param['HauteurDeligneuse']
+			longueur_de_campagne_mm=int(param['LongueurDeCampagneMM']),
+			epaisseur_principale_multilame=int(param['EpaisseurPrincipaleMultilame']),
+			hauteur_produits_multilame=int(param['HauteurProduitsMultilame']),
+			epaisseur_secondaire_multilame=int(param['EpaisseurSecondaireMultilame']),
+			nombre_produits_secondaires=int(param['NombreProduitsSecondaires']),
+			numero_configuration=int(param['NumeroConfiguration']),
+			largeur_deligneuse1=int(param['LargeurDeligneuse1']),
+			largeur_deligneuse2=int(param['LargeurDeligneuse2']),
+			largeur_deligneuse3=int(param['LargeurDeligneuse3']),
+			largeur_deligneuse4=int(param['LargeurDeligneuse4']),
+			largeur_deligneuse5=int(param['LargeurDeligneuse5']),
+			hauteur_deligneuse=int(param['HauteurDeligneuse'])
 		)
 		return info
 
@@ -528,12 +485,12 @@ class InfoConfigurationLigne(models.Model):
 class Sciage(models.Model):
 	debut = models.DateTimeField()
 	fin = models.DateTimeField()
-	duree_interruption = models.PositiveIntegerField()
-	duree_saturation_de_ligneuse = models.PositiveIntegerField()
-	duree_saturation_twin = models.PositiveIntegerField()
+	duree_interruption = models.TimeField()
+	duree_saturation_de_ligneuse = models.TimeField()
+	duree_saturation_twin = models.TimeField()
 	vitesse_sciage_mmin = models.PositiveIntegerField()
-	temps_stop_and_go = models.PositiveIntegerField()
-	reserve = models.PositiveIntegerField()
+	temps_stop_and_go = models.TimeField()
+	reserve = models.TimeField()
 
 	class Meta:
 		abstract = True
@@ -549,7 +506,7 @@ class Sciage(models.Model):
 			duree_interruption=param['DureeInterruption'],
 			duree_saturation_de_ligneuse=param['DureeSaturationDeligneuse'],
 			duree_saturation_twin=param['DureeSaturationTwin'],
-			vitesse_sciage_mmin=param['VitesseSciageMMin'],
+			vitesse_sciage_mmin=int(param['VitesseSciageMMin']),
 			temps_stop_and_go=param['TempsStopAndGo'],
 			reserve=param['Reserve']
 		)
