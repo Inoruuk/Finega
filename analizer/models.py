@@ -13,7 +13,19 @@ from .production_models import \
 	InfoTempsDeCycleSciage
 
 
+class IltManager(models.DjongoManager):
+	def get_queryset(self):
+		return super().get_queryset().filter(entreprise='ILT')
+
+
+class AproManager(models.DjongoManager):
+	def get_queryset(self):
+		return super().get_queryset().filter(entreprise='Aprobois')
+
+
+
 class Campagne(models.Model):
+	entreprise = models.CharField(max_length=128)
 	info_grume = models.EmbeddedModelField(model_container=InfoGrume)
 	mesure_grume = models.EmbeddedModelField(model_container=MesureGrume)
 	info_sciage = models.EmbeddedModelField(model_container=InfosSciage)
@@ -27,6 +39,7 @@ class Campagne(models.Model):
 	info_temps_de_cycle_sciage = models.EmbeddedModelField(model_container=InfoTempsDeCycleSciage)
 
 	objects = models.DjongoManager()
+	ilt_manager = IltManager()
 
 	def save(self):
 		t = super().save(using='data')
@@ -36,9 +49,9 @@ class Campagne(models.Model):
 		return 'Infomartion de production de la campagne'
 
 	@classmethod
-	def create(cls, param: dict):
-		#		doc = [DataInfoSciage.create(x) for x in param['Campagne']['InfosSciage']['InfosSciage']['DataInfoSciage']]
+	def create(cls, param: dict, name: str):
 		info = cls(
+			entreprise=name,
 			info_grume=InfoGrume.create(param['InfoGrume']),
 			mesure_grume=MesureGrume.create(param['MesureGrume']),
 			info_sciage=InfosSciage.create(param['InfosSciage']),
