@@ -13,14 +13,14 @@ from .production_models import \
 	InfoTempsDeCycleSciage
 
 
-class IltManager(models.DjongoManager):
-	def get_queryset(self):
-		return super().get_queryset().filter(entreprise='ILT')
-
-
-class AproManager(models.DjongoManager):
-	def get_queryset(self):
-		return super().get_queryset().filter(entreprise='Aprobois')
+# class IltManager(models.DjongoManager):
+# 	def get_queryset(self):
+# 		return super().get_queryset().filter(entreprise={"entreprise": 'ILT'})
+#
+#
+# class AproManager(models.DjongoManager):
+# 	def get_queryset(self):
+# 		return super().get_queryset().filter(entreprise={"entreprise": 'Aprobois'})
 
 
 
@@ -39,7 +39,7 @@ class Campagne(models.Model):
 	info_temps_de_cycle_sciage = models.EmbeddedModelField(model_container=InfoTempsDeCycleSciage)
 
 	objects = models.DjongoManager()
-	ilt_manager = IltManager()
+	# ilt_manager = IltManager()
 
 	def save(self):
 		t = super().save(using='data')

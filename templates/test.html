@@ -1,0 +1,10 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}Test{% endblock %}
+
+{% block content %}
+{% for x in c %}
+	{{ x }}
+{% endfor %}
+{% endblock %}
