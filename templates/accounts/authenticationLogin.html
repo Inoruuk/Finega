@@ -1,0 +1,23 @@
+{% extends 'accounts/authenticationBase.html' %}
+{% load static %}
+{% block form %}
+    <img class="form-osia" src="{% static 'accounts/img/osia.png' %}" alt="" width="394" height="170">
+    <form method="post" class="form-signin">
+        {% csrf_token %}
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+        {{ form.email.errors }}
+        <label for="{{ form.email.id_for_label }}" class="sr-only">{{ form.email.label_tag }}</label>
+    	<input id="{{ form.email.id_for_label }}" name="{{ form.email.html_name }}" type="{{ form.email.html_name }}" class="form-control" placeholder="{{ form.email.label }}" required="" autofocus="">
+    	<label for="{{ form.password.id_for_label }}" class="sr-only">{{ form.password.label_tag }}</label>
+    	<input id="{{ form.password.id_for_label }}" name="{{ form.password.html_name }}" type="{{ form.password.html_name }}" class="form-control" placeholder="{{ form.password.label }}" required="">
+    	<div class="checkbox mb-3">
+    		<a href="{% url 'authentication_reset' %}">Forgot password ?</a>
+      	</div>
+      	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">by FINEGA Group®</p>
+        </form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'accounts/authenticationBase.html' %}
+{% load static %}
+{% block form %}
+    <img class="form-osia" src="{% static 'accounts/img/osia.png' %}" alt="" width="394" height="170">
+    <form method="post" class="form-reset">
+        {% csrf_token %}
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+        {{ form.email.errors }}
+        <label for="{{ form.email.id_for_label }}" class="sr-only">{{ form.email.label_tag }}</label>
+    	<input id="{{ form.email.id_for_label }}" name="{{ form.email.html_name }}" type="{{ form.email.html_name }}" class="form-control" placeholder="{{ form.email.label }}" required="" autofocus="">
+        <div class="checkbox mb-3">
+    		<a href="{% url 'authentication_login' %}">Back to login</a>
+      	</div>
+      	<button class="btn btn-lg btn-primary btn-block" type="submit">Send reset instructions</button>
+        </form>
+{% endblock %}

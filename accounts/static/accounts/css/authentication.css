@@ -1,0 +1,213 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  color: #609de0;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #609de0 !important;
+  border-color: #609de0 !important;
+  font-family: Intelo-Medium;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #00122d !important;
+  border-color: #609de0 !important;
+}
+.form-signin, .form-reset{
+  width: 100%;
+  position: relative;
+  text-align: center;
+  max-width: 330px;
+  vertical-align: middle;
+  margin: auto;
+  display: block;
+}
+.form-signin .form-control{
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-center {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 10%;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 25px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+}
+.form-reset input[type="email"]{
+  margin-bottom: 25px;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+}
+.form-signin .form-reset, input[type="email"]:-webkit-autofill,
+.form-signin .form-reset, input[type="email"]:-webkit-autofill:hover,
+.form-signin .form-reset, input[type="email"]:-webkit-autofill:focus,
+.form-signin .form-reset, input[type="email"]:-webkit-autofill:active  {
+  -webkit-box-shadow: 0 0 0 100px #00122d inset !important;
+  -webkit-text-fill-color: white;
+}
+.alert-danger {
+    color: #c11f26;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-color: #116fa5;
+}
+.form-osia {
+  position: relative;
+  display: block;
+  margin-block-end: 50px;
+}
+
+/* ==========================================================================
+   CSS DEMO
+   ========================================================================== */
+.panel {
+  width: 100%;
+  display: inline-block;
+  margin-top: 3rem;
+}
+.panel-embeded {
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  position: relative;
+  margin: 1rem 3rem;
+}
+.panel-icon {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin: 2em 0rem;
+  margin-block: 2rem;
+}
+.panel-text {
+  color: white !important;
+  margin-bottom: 4rem !important;
+  vertical-align: middle;
+  padding: 0;
+  text-align: center;
+}
+.panel-button {
+  position: relative;
+  display: block;
+  margin: 1rem 3rem;
+}
+.panel hr{
+  display: inline-block;
+  height: 1px;
+  border: 0px;
+  border-top: 1px solid #ccc;
+  padding: 0px;
+  width: 75%;
+}
+/* ==========================================================================
+   HTML5 CSS Reset Minified
+   ========================================================================== */
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:auto;padding:0;vertical-align:middle;}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+li{list-style:none}
+
+/* ---- base ---- */
+
+html,body{ 
+  background:#00122d;
+}
+
+
+/* ---- stats.js ---- */
+
+.count-particles{
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13E8E9;
+  font-size: .8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.js-count-particles{
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles{
+  -webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+#stats{
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles{
+  border-radius: 0 0 3px 3px;
+}
+
+
+/* ---- particles.js container ---- */
+
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-color: #00122d;
+  background-image: url('');
+  background-size: cover;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+}

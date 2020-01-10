@@ -1,3 +1,8 @@
 from django.contrib import admin
+from django.contrib.auth.models import Group
+from accounts.forms import AccountAdmin
+from accounts.models import Account
 
-# Register your models here.
+
+admin.site.register(Account, AccountAdmin)
+admin.site.unregister(Group)
