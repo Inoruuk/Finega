@@ -1,4 +1,5 @@
 from djongo import models
+from datetime import datetime
 from .production_models import \
 	InfoGrume, \
 	MesureGrume,\
@@ -13,15 +14,14 @@ from .production_models import \
 	InfoTempsDeCycleSciage
 
 
-# class IltManager(models.DjongoManager):
-# 	def get_queryset(self):
-# 		return super().get_queryset().filter(entreprise={"entreprise": 'ILT'})
-#
-#
-# class AproManager(models.DjongoManager):
-# 	def get_queryset(self):
-# 		return super().get_queryset().filter(entreprise={"entreprise": 'Aprobois'})
+class CampagneManager(models.DjongoManager):
 
+	def time(self, name=None, day=1):
+		return super().get_queryset().using('data').filter(
+			entreprise=name,
+			temps_de_cycle__gte={"time": datetime(2019, 10, day, 00, 00, 00).isoformat()},
+			temps_de_cycle__lt={"time": datetime(2019, 10, day + 1, 00, 00, 00).isoformat()}
+		)
 
 
 class Campagne(models.Model):
@@ -39,7 +39,7 @@ class Campagne(models.Model):
 	info_temps_de_cycle_sciage = models.EmbeddedModelField(model_container=InfoTempsDeCycleSciage)
 
 	objects = models.DjongoManager()
-	# ilt_manager = IltManager()
+	camp_manager = CampagneManager()
 
 	def save(self):
 		t = super().save(using='data')

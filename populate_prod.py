@@ -10,7 +10,7 @@ from analizer.models import Campagne
 
 def ilt_pop():
 	for file in os.listdir("ILT"):
-		with open(file) as f:
+		with open("ILT/" + file) as f:
 			data = json.load(f)
 		for y in data['DatasInfoGestionProduction']:
 			cp = Campagne.create(param=y, name="ILT")
@@ -19,7 +19,7 @@ def ilt_pop():
 
 def apro_pop():
 	for file in os.listdir("APROBOIS"):
-		with open(file) as f:
+		with open("APROBOIS/" + file) as f:
 			data = json.load(f)
 		for y in data['DatasInfoGestionProduction']:
 			cp = Campagne.create(param=y, name="Aprobois")
@@ -43,6 +43,3 @@ if __name__ == '__main__':
 	else:
 		ilt_pop()
 		apro_pop()
-
-
-

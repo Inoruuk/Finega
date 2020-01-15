@@ -1,9 +1,4 @@
 from djongo import models
-import re
-from datetime import datetime
-#pattern use to change 2019-11-13T07:25:36 to datetime object
-pattern = re.compile('(\d+)')
-
 # Create your models here.
 
 
@@ -170,7 +165,7 @@ class InfosSciage(models.Model):
 
 
 class DureeEvenement(models.Model):
-	duree = models.TimeField()
+	duree = models.CharField(max_length=32)
 	cause = models.PositiveIntegerField()
 
 	class Meta:
@@ -189,7 +184,7 @@ class DureeEvenement(models.Model):
 
 
 class HeureEvenement(models.Model):
-	heure = models.DateTimeField()
+	heure = models.CharField(max_length=32)
 	cause = models.PositiveIntegerField()
 
 	class Meta:
@@ -264,7 +259,7 @@ class CausesRescans(models.Model):
 
 
 class TempsDeCycle(models.Model):
-	time = models.DateTimeField()
+	time = models.CharField(max_length=32)
 	temps_sciage_passage_1grume = models.PositiveIntegerField()
 	temps_retour_passage_1grume = models.PositiveIntegerField()
 	nombre_passage_planche_supplementaires_grume = models.PositiveIntegerField()
@@ -287,10 +282,8 @@ class TempsDeCycle(models.Model):
 
 	@classmethod
 	def create(cls, param: dict):
-		pat = re.findall(pattern, param['Time'])
-		time = datetime(int(pat[0]), int(pat[1]), int(pat[2]), int(pat[3]), int(pat[4]), int(pat[5]))
 		info = cls(
-			time=time,
+			time=param['Time'],
 			temps_sciage_passage_1grume=int(param['TempsSciagePassage1Grume']),
 			temps_retour_passage_1grume=int(param['TempsRetourPassage1Grume']),
 			nombre_passage_planche_supplementaires_grume=int(param['NombrePassagePlancheSupplementairesGrume']),
@@ -315,17 +308,17 @@ class TempsDeCycle(models.Model):
 
 
 class InfosCycleAutomate(models.Model):
-	debut_sciage = models.DateTimeField()
-	fin_sciage = models.DateTimeField()
-	heure_grume_prete_pour_ejection = models.DateTimeField()
-	heure_ejection_sur_quai_analyses = models.DateTimeField()
-	heure_griffage_sur_analyse = models.DateTimeField()
-	heure_fin_rotation_sur_analyse = models.DateTimeField()
-	heure_fin_optimisation = models.DateTimeField()
-	heure_fin_rotation_optimale = models.DateTimeField()
-	heure_table_analyse_en_attente_chargement = models.DateTimeField()
-	heure_depart_transfert_table_vers_portique = models.DateTimeField()
-	heure_depart_griffage_sciage = models.DateTimeField()
+	debut_sciage = models.CharField(max_length=32)
+	fin_sciage = models.CharField(max_length=32)
+	heure_grume_prete_pour_ejection = models.CharField(max_length=32)
+	heure_ejection_sur_quai_analyses = models.CharField(max_length=32)
+	heure_griffage_sur_analyse = models.CharField(max_length=32)
+	heure_fin_rotation_sur_analyse = models.CharField(max_length=32)
+	heure_fin_optimisation = models.CharField(max_length=32)
+	heure_fin_rotation_optimale = models.CharField(max_length=32)
+	heure_table_analyse_en_attente_chargement = models.CharField(max_length=32)
+	heure_depart_transfert_table_vers_portique = models.CharField(max_length=32)
+	heure_depart_griffage_sciage = models.CharField(max_length=32)
 	#	temps = models.ArrayModelField(model_container=Temps)
 	vitesse_sciage_canter_m_min = models.PositiveIntegerField()
 	temps_saturation_ejection_tt_vers_twin = models.PositiveIntegerField()
@@ -364,33 +357,33 @@ class InfosCycleAutomate(models.Model):
 
 
 class InfosTempsDeCycle(models.Model):
-	heure_grume_prete_pour_ejection = models.DateTimeField()
-	heure_table_analyse_en_attente_chargement = models.DateTimeField()
-	heure_ejection_sur_quai_analyse = models.DateTimeField()
-	heure_debut_griffage_analyse = models.DateTimeField()
-	heure_fin_griffage_analyse = models.DateTimeField()
-	heure_debut_rotation_analyse = models.DateTimeField()
-	heure_fin_rotation_analyse = models.DateTimeField()
-	heure_fin_optimisation = models.DateTimeField()
-	heure_debut_griffage_analyse2 = models.DateTimeField()
-	heure_fin_griffage_analyse2 = models.DateTimeField()
-	heure_debut_rotation_analyse2 = models.DateTimeField()
-	heure_fin_rotation_analyse2 = models.DateTimeField()
-	heure_fin_optimisation2 = models.DateTimeField()
-	heure_fin_rotation_optimale = models.DateTimeField()
-	heure_fin_de_griffage_analyse = models.DateTimeField()
-	depart_transfert_table_vers_intermediaire_portique = models.DateTimeField()
-	heure_table_position_intermediaire = models.DateTimeField()
-	heure_chariot_sciage_position_attente_table = models.DateTimeField()
-	depart_transfert_table_intermediaire_vers_sciage = models.DateTimeField()
-	heure_depart_griffage_sciage = models.DateTimeField()
-	heure_fin_griffage_sciage = models.DateTimeField()
-	heure_table_en_position_chargement = models.DateTimeField()
-	reserve1 = models.DateTimeField()
-	reserve2 = models.DateTimeField()
-	reserve3 = models.DateTimeField()
-	reserve4 = models.DateTimeField()
-	reserve5 = models.DateTimeField()
+	heure_grume_prete_pour_ejection = models.CharField(max_length=32)
+	heure_table_analyse_en_attente_chargement = models.CharField(max_length=32)
+	heure_ejection_sur_quai_analyse = models.CharField(max_length=32)
+	heure_debut_griffage_analyse = models.CharField(max_length=32)
+	heure_fin_griffage_analyse = models.CharField(max_length=32)
+	heure_debut_rotation_analyse = models.CharField(max_length=32)
+	heure_fin_rotation_analyse = models.CharField(max_length=32)
+	heure_fin_optimisation = models.CharField(max_length=32)
+	heure_debut_griffage_analyse2 = models.CharField(max_length=32)
+	heure_fin_griffage_analyse2 = models.CharField(max_length=32)
+	heure_debut_rotation_analyse2 = models.CharField(max_length=32)
+	heure_fin_rotation_analyse2 = models.CharField(max_length=32)
+	heure_fin_optimisation2 = models.CharField(max_length=32)
+	heure_fin_rotation_optimale = models.CharField(max_length=32)
+	heure_fin_de_griffage_analyse = models.CharField(max_length=32)
+	depart_transfert_table_vers_intermediaire_portique = models.CharField(max_length=32)
+	heure_table_position_intermediaire = models.CharField(max_length=32)
+	heure_chariot_sciage_position_attente_table = models.CharField(max_length=32)
+	depart_transfert_table_intermediaire_vers_sciage = models.CharField(max_length=32)
+	heure_depart_griffage_sciage = models.CharField(max_length=32)
+	heure_fin_griffage_sciage = models.CharField(max_length=32)
+	heure_table_en_position_chargement = models.CharField(max_length=32)
+	reserve1 = models.CharField(max_length=32)
+	reserve2 = models.CharField(max_length=32)
+	reserve3 = models.CharField(max_length=32)
+	reserve4 = models.CharField(max_length=32)
+	reserve5 = models.CharField(max_length=32)
 
 	class Meta:
 		abstract = True
@@ -483,14 +476,14 @@ class InfoConfigurationLigne(models.Model):
 
 
 class Sciage(models.Model):
-	debut = models.DateTimeField()
-	fin = models.DateTimeField()
-	duree_interruption = models.TimeField()
-	duree_saturation_de_ligneuse = models.TimeField()
-	duree_saturation_twin = models.TimeField()
+	debut = models.CharField(max_length=32)
+	fin = models.CharField(max_length=32)
+	duree_interruption = models.CharField(max_length=32)
+	duree_saturation_de_ligneuse = models.CharField(max_length=32)
+	duree_saturation_twin = models.CharField(max_length=32)
 	vitesse_sciage_mmin = models.PositiveIntegerField()
-	temps_stop_and_go = models.TimeField()
-	reserve = models.TimeField()
+	temps_stop_and_go = models.CharField(max_length=32)
+	reserve = models.CharField(max_length=32)
 
 	class Meta:
 		abstract = True

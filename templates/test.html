@@ -5,6 +5,6 @@
 
 {% block content %}
 {% for x in c %}
-	{{ x }}
+	<p>{{ x.entreprise }} {{ x.info_grume.numero_grume }} {{ x.temps_de_cycle.time }}</p>
 {% endfor %}
 {% endblock %}
