@@ -102,6 +102,51 @@ class CampagneManager(models.DjongoManager):
 		res['total'] = {'tot': multi + deli, 'm': multi, 'd': deli}
 		return res
 
+	def prod_time_day(self, name=None, day=1, month=1, year=2019):
+		query = self.get_queryset().day(name=name, day=day, month=month, year=year)
+		res = {
+			'horaires': {
+				'mise sous tension': '00:00:00',
+				'premiere grume': 0,
+				'derniere grume avant pause matin': 0,
+				'premiere grume apres pause matin': 0,
+				'derniere grume avant pause midi': 0,
+				'premiere grume apres pause midi': 0,
+				'derniere grume avant pause aprem': 0,
+				'premiere grume apres pause aprem': 0,
+				'derniere grume': 0,
+				'mise hors tension': '00:00:00',
+				'duree du poste': '00:00:00',
+				'duree prod(pause comprise)': 0,
+				'duree pause matin': 0,
+				'duree pause midi': 0,
+				'duree pause aprem': 0,
+				'duree total pause': 0,
+				'duree changement prod hors pause': 0,
+				'duree aprovisionement': 0,
+				'duree attente approvisionement': 0,
+				'duree attente chargement interuption': 0,
+				'duree derniere plage': 0,
+				'duree totale interuption': 0,
+				'duree totale interuption / temps de prod(%)': 0
+
+			},
+			'cumul journée': {
+				'temps de sciage effectif(tps prod - cumul pause)': 0,
+				'temps de sciage effectif(minutes)': 0,
+				'temps total sciage / temps prdo(%)': 0,
+				'nombre total de grume': 0,
+				'volume total marchand': 0,
+				'cumul longueur totale': 0
+			},
+			'donnees moyennes': {
+				'longueure moyenne billion(m)': 0,
+				'diametre moyen billion(mm)': 0,
+				'volume moyen billion(mm)': 0,
+				'temps de cycle moyen(s)': 0,
+				'prod moyenne / temps de sciage effectif(m3/h)': 0
+			}
+		}
 
 class Campagne(models.Model):
 	entreprise = models.CharField(max_length=128)
