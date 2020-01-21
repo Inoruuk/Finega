@@ -4,7 +4,7 @@ from math import pi, pow
 from datetime import datetime
 from .production_models import \
 	InfoGrume, \
-	MesureGrume,\
+	MesureGrume, \
 	InfosSciage, \
 	CausesRescans, \
 	TempsDeCycle, \
@@ -41,6 +41,9 @@ class CampagneManager(models.DjongoManager):
 	def get_queryset(self):
 		return CampagneQuerySet(self.model, using='data')
 
+	def count_day(self, name=None, day=1, month=1, year=2019):
+		return {'count': self.get_queryset().day(name=name, day=day, month=month, year=year).count()}
+
 	def prod_day(self, name=None, day=1, month=1, year=2019):
 		c = 0
 		query = self.get_queryset().day(name=name, day=day, month=month, year=year)
@@ -48,7 +51,56 @@ class CampagneManager(models.DjongoManager):
 			dcubage = (x.mesure_grume.diametre_cubage_mm / 10) / 2
 			lcubage = x.mesure_grume.longueur_cubage_mm / 10
 			c += pi * pow(dcubage, 2) * lcubage
-		return {'vcube': c / 1000000,  'label':{'horizontal': 'toto'}}
+		return {'vcube': int(c / 1000000)}
+
+	def prod_scie_day(self, name=None, day=1, month=1, year=2019):
+		query = self.get_queryset().day(name=name, day=day, month=month, year=year)
+		sizes = []
+		res = {}
+		count = 1
+		for x in query:
+			for y in x.info_sciage.data_info_sciage:
+				if (y.epaisseur, y.largeur, y.longueur, y.nombre_produits) != (0, 0, 0, 0):
+					sizes.append((y.epaisseur, y.largeur, y.longueur, y.nombre_produits))
+		sizes.sort()
+		e, l, ll = 0, 0, 0
+		for size in sizes:
+			if size[0] != e or size[1] != l or size[2] != ll:
+				e, l, ll = size[0], size[1], size[2]
+				res[count] = {'ep': e, 'larg': l, 'long': ll / 1000, 'nb': size[3]}
+				count += 1
+			else:
+				cc = count - 1
+				res[cc]['nb'] += size[3]
+		return res
+
+	def prod_tool_day(self, name=None, day=1, month=1, year=2019):
+		query = self.get_queryset().day(name=name, day=day, month=month, year=year)
+		sizes = []
+		res = {}
+		count = 1
+		deli, multi = 0, 0
+		for x in query:
+			for y in x.info_sciage.data_info_sciage:
+				if (y.epaisseur, y.largeur, y.info, y.nombre_produits) != (0, 0, 0, 0):
+					sizes.append((y.epaisseur, y.largeur, y.info, y.nombre_produits))
+		sizes.sort()
+		e, t, ll = 0, 0, 0
+		for size in sizes:
+			if size[0] != e or size[1] != t or size[2] != ll:
+				e, t, ll = size[0], size[1], size[2]
+				res[count] = {'ep': e, 'larg': t, 'tool': ll, 'nb': size[3]}
+				count += 1
+			else:
+				cc = count - 1
+				res[cc]['nb'] += size[3]
+		for x in res:
+			if res[x]['tool'] == 1:
+				multi += res[x]['nb']
+			elif res[x]['tool'] == 12:
+				deli += res[x]['nb']
+		res['total'] = {'tot': multi + deli, 'm': multi, 'd': deli}
+		return res
 
 
 class Campagne(models.Model):

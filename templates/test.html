@@ -4,8 +4,8 @@
 {% block title %}Test{% endblock %}
 
 {% block content %}
-{#{% for x in c %}#}
+{% for x in c %}
 {#	<p>{{ x.entreprise }} {{ x.info_grume.numero_grume }} {{ x.temps_de_cycle.time }}</p>#}
-    {{ c.nb_grume }} {{ c.vcube }}
-{#{% endfor %}#}
+    <p>{{ c }}</p>
+{% endfor %}
 {% endblock %}
