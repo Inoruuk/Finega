@@ -107,7 +107,7 @@ class CampagneManager(models.DjongoManager):
 		res = {
 			'horaires': {
 				'mise sous tension': '00:00:00',
-				'premiere grume': 0,
+				'premiere grume': query[0].info_temps_de_cycle.heure_ejection_sur_quai_analyse,
 				'derniere grume avant pause matin': 0,
 				'premiere grume apres pause matin': 0,
 				'derniere grume avant pause midi': 0,
@@ -147,6 +147,9 @@ class CampagneManager(models.DjongoManager):
 				'prod moyenne / temps de sciage effectif(m3/h)': 0
 			}
 		}
+		print(query[len(query) - 1].info_temps_de_cycle.heure_ejection_sur_quai_analyse)
+		return {}
+
 
 class Campagne(models.Model):
 	entreprise = models.CharField(max_length=128)
