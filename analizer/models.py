@@ -1,7 +1,8 @@
 from djongo import models
-from calendar import monthrange
+import re
 from math import pi, pow
-from datetime import datetime
+from datetime import datetime, timedelta
+from statistics import mean #utilisée pour faire une moyenne
 from .production_models import \
 	InfoGrume, \
 	MesureGrume, \
@@ -15,25 +16,50 @@ from .production_models import \
 	InfosTempsDeCycle, \
 	InfoTempsDeCycleSciage
 
+pattern = '(\d+)'
+pat = '(\d+):(\d+):(\d+)'
 
-def datecheck(year, month, day, d=0) -> tuple:
-	day += 1
-	if day >= monthrange(year, month)[1]:
-		day = 1
-		month += 1
-	if month > 12:
-		month = 1
-		year += 1
-	return (year, month, day)
+
+# A améliorer, voir __iter__ dans la classe
+def check_config(conf, item):
+	return (
+			conf.longueur_de_campagne_mm == item.longueur_de_campagne_mm and
+			conf.epaisseur_principale_multilame == item.epaisseur_principale_multilame and
+			conf.hauteur_produits_multilame == item.hauteur_produits_multilame and
+			conf.epaisseur_secondaire_multilame == item.epaisseur_secondaire_multilame and
+			conf.nombre_produits_secondaires == conf.nombre_produits_secondaires and
+			conf.numero_configuration == item.numero_configuration and
+			conf.largeur_deligneuse1 == item.largeur_deligneuse1 and
+			conf.largeur_deligneuse2 == item.largeur_deligneuse2 and
+			conf.largeur_deligneuse3 == item.largeur_deligneuse3 and
+			conf.largeur_deligneuse4 == item.largeur_deligneuse4 and
+			conf.largeur_deligneuse5 == item.largeur_deligneuse5 and
+			conf.hauteur_deligneuse == item.hauteur_deligneuse
+	)
+
+
+def subtime(t1, t2):
+	try:
+		return str(datetime.strptime(t1, '%Y-%m-%dT%H:%M:%S') - datetime.strptime(t2, '%Y-%m-%dT%H:%M:%S'))
+	except ValueError:
+		return str(datetime.strptime(str(t1), '%H:%M:%S') - datetime.strptime(str(t2), '%H:%M:%S'))
+
+
+# A ameliorer
+def addtime(l: list):
+	total = timedelta(hours=0, minutes=0, seconds=0)
+	for time in l:
+		t = re.findall(pat, time)[0]
+		total += timedelta(hours=int(t[0]), minutes=int(t[1]), seconds=int(t[2]))
+	return str(total)
 
 
 class CampagneQuerySet(models.QuerySet):
 	def day(self, name: str, day=1, month=1, year=2019):
-		year2, month2, day2 = datecheck(year, month, day)
 		return self.filter(
 			entreprise=name,
 			temps_de_cycle__gte={"time": datetime(year, month, day, 00, 00, 00).isoformat()},
-			temps_de_cycle__lt={"time": datetime(year2, month2, day2, 00, 00, 00).isoformat()}
+			temps_de_cycle__lt={"time": datetime(year, month, day, 23, 59, 59).isoformat()}
 		)
 
 
@@ -47,11 +73,14 @@ class CampagneManager(models.DjongoManager):
 	def prod_day(self, name=None, day=1, month=1, year=2019):
 		c = 0
 		query = self.get_queryset().day(name=name, day=day, month=month, year=year)
-		for x in query:
-			dcubage = (x.mesure_grume.diametre_cubage_mm / 10) / 2
-			lcubage = x.mesure_grume.longueur_cubage_mm / 10
+		total = 0
+		for item in query:
+			for info in item.info_sciage.data_info_sciage:
+				total += info.epaisseur * info.largeur * info.longueur * info.nombre_produits
+			dcubage = (item.mesure_grume.diametre_cubage_mm / 10) / 2
+			lcubage = item.mesure_grume.longueur_cubage_mm / 10
 			c += pi * pow(dcubage, 2) * lcubage
-		return {'vcube': int(c / 1000000)}
+		return {'volume grume(m3)': round(c / 1000000, 1), 'volume prod(m3)': round(total/1000000000, 1)}
 
 	def prod_scie_day(self, name=None, day=1, month=1, year=2019):
 		query = self.get_queryset().day(name=name, day=day, month=month, year=year)
@@ -107,14 +136,14 @@ class CampagneManager(models.DjongoManager):
 		res = {
 			'horaires': {
 				'mise sous tension': '00:00:00',
-				'premiere grume': query[0].info_temps_de_cycle.heure_ejection_sur_quai_analyse,
-				'derniere grume avant pause matin': 0,
-				'premiere grume apres pause matin': 0,
-				'derniere grume avant pause midi': 0,
-				'premiere grume apres pause midi': 0,
-				'derniere grume avant pause aprem': 0,
-				'premiere grume apres pause aprem': 0,
-				'derniere grume': 0,
+				'premiere grume': query[0].temps_de_cycle.time,
+				'derniere grume avant pause matin': query.filter(temps_de_cycle__lt={"time": datetime(year, month, day, 10, 00, 00).isoformat()})[::-1][0].temps_de_cycle.time,
+				'premiere grume apres pause matin': query.filter(temps_de_cycle__gt={"time": datetime(year, month, day, 10, 00, 00).isoformat()})[0].temps_de_cycle.time,
+				'derniere grume avant pause midi': query.filter(temps_de_cycle__lt={"time": datetime(year, month, day, 12, 00, 00).isoformat()})[::-1][0].temps_de_cycle.time,
+				'premiere grume apres pause midi': query.filter(temps_de_cycle__gt={"time": datetime(year, month, day, 12, 00, 00).isoformat()})[0].temps_de_cycle.time,
+				'derniere grume avant pause aprem': query.filter(temps_de_cycle__lt={"time": datetime(year, month, day, 15, 30, 00).isoformat()})[::-1][0].temps_de_cycle.time,
+				'premiere grume apres pause aprem': query.filter(temps_de_cycle__gt={"time": datetime(year, month, day, 15, 30, 00).isoformat()})[0].temps_de_cycle.time,
+				'derniere grume': query[query.count() - 1].temps_de_cycle.time,
 				'mise hors tension': '00:00:00',
 				'duree du poste': '00:00:00',
 				'duree prod(pause comprise)': 0,
@@ -122,11 +151,11 @@ class CampagneManager(models.DjongoManager):
 				'duree pause midi': 0,
 				'duree pause aprem': 0,
 				'duree total pause': 0,
-				'duree changement prod hors pause': 0,
+				'duree changement prod hors pause': '00:00:00',
 				'duree aprovisionement': 0,
 				'duree attente approvisionement': 0,
 				'duree attente chargement interuption': 0,
-				'duree derniere plage': 0,
+				'duree derniere plage': [],
 				'duree totale interuption': 0,
 				'duree totale interuption / temps de prod(%)': 0
 
@@ -135,20 +164,93 @@ class CampagneManager(models.DjongoManager):
 				'temps de sciage effectif(tps prod - cumul pause)': 0,
 				'temps de sciage effectif(minutes)': 0,
 				'temps total sciage / temps prdo(%)': 0,
-				'nombre total de grume': 0,
+				'nombre total de grume': query.count(),
 				'volume total marchand': 0,
 				'cumul longueur totale': 0
 			},
 			'donnees moyennes': {
-				'longueure moyenne billion(m)': 0,
+				'longueur moyenne billion(m)': 0,
 				'diametre moyen billion(mm)': 0,
-				'volume moyen billion(mm)': 0,
+				'volume moyen billion(m3)': 0,
 				'temps de cycle moyen(s)': 0,
 				'prod moyenne / temps de sciage effectif(m3/h)': 0
 			}
 		}
-		print(query[len(query) - 1].info_temps_de_cycle.heure_ejection_sur_quai_analyse)
-		return {}
+		res['horaires']['duree prod(pause comprise)'] = subtime(
+			res['horaires']['derniere grume'],
+			res['horaires']['premiere grume']
+		)
+		res['horaires']['duree pause matin'] = subtime(
+			res['horaires']['premiere grume apres pause matin'],
+			res['horaires']['derniere grume avant pause matin']
+		)
+		res['horaires']['duree pause midi'] = subtime(
+			res['horaires']['premiere grume apres pause midi'],
+			res['horaires']['derniere grume avant pause midi']
+		)
+		res['horaires']['duree pause aprem'] = subtime(
+			res['horaires']['premiere grume apres pause aprem'],
+			res['horaires']['derniere grume avant pause aprem']
+		)
+		res['horaires']['duree total pause'] = addtime([
+			res['horaires']['duree pause matin'],
+			res['horaires']['duree pause midi'],
+			res['horaires']['duree pause aprem']]
+		)
+		res['cumul journée']['temps de sciage effectif(tps prod - cumul pause)'] = subtime(
+			res['horaires']['duree prod(pause comprise)'],
+			res['horaires']['duree total pause']
+		)
+		foo = query[0].info_configuration_ligne
+		time = query[0].temps_de_cycle.time
+		plages = []
+		for item in query:
+			"""
+			Horaires: Durée derniere plage
+			"""
+			y = subtime(
+				item.infos_cycle_automate.fin_sciage,
+				item.info_temps_de_cycle.depart_transfert_table_vers_intermediaire_portique
+			)
+			plages.append(y)
+			if y >= '0:01:30':
+				res['horaires']['duree derniere plage'].append(y)
+			"""
+			Horaires: duree changement prod hors pause
+			"""
+			if check_config(foo, item.info_configuration_ligne):
+				time = item.temps_de_cycle.time
+			else:
+				res['horaires']['duree changement prod hors pause'] = addtime([
+					res['horaires']['duree changement prod hors pause'],
+					subtime(item.temps_de_cycle.time, time)]
+				)
+				foo = item.info_configuration_ligne
+				time = item.temps_de_cycle.time
+			"""
+			Cumul: Longueur total
+			"""
+			res['cumul journée']['cumul longueur totale'] += item.mesure_grume.longueur_reelle_mm / 1000
+			"""
+			Données moyennes longueur et diametre
+			"""
+			res['donnees moyennes']['longueur moyenne billion(m)'] += item.mesure_grume.longueur_reelle_mm
+			res['donnees moyennes']['diametre moyen billion(mm)'] += item.mesure_grume.diametre_moyen_mm
+		#fin for
+		res['horaires']['duree derniere plage'] = addtime(res['horaires']['duree derniere plage'])
+		res['cumul journée']['cumul longueur totale'] = round(res['cumul journée']['cumul longueur totale'], 1)
+		res['cumul journée']['temps de sciage effectif(minutes)'] = \
+			round(sum(int(x) * 60 ** i for i, x in enumerate(reversed(res['cumul journée']['temps de sciage effectif(tps prod - cumul pause)'].split(':')))) / 60, 1)
+		res['donnees moyennes']['longueur moyenne billion(m)'] /= res['cumul journée']['nombre total de grume']
+		res['donnees moyennes']['diametre moyen billion(mm)'] /= res['cumul journée']['nombre total de grume']
+		res['donnees moyennes']['volume moyen billion(m3)'] = \
+			round(pi * pow(res['donnees moyennes']['diametre moyen billion(mm)'] / 2 / 1000, 2) * \
+			res['donnees moyennes']['longueur moyenne billion(m)'] / 1000, 3)
+		plages = addtime(plages)
+		res['donnees moyennes']['temps de cycle moyen(s)'] = round(
+			sum(int(x) * 60 ** i for i, x in enumerate(reversed(plages.split(':')))) / query.count(), 1)
+		res['donnees moyennes']['prod moyenne / temps de sciage effectif(m3/h)'] = None
+		return res
 
 
 class Campagne(models.Model):
