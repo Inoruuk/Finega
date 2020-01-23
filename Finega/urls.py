@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
+from analizer import views
+
+router = routers.DefaultRouter()
+router.register(r'campagne', views.CampagneViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('analizer.url'))
+    path('', include('analizer.url')),
+    path('', include(router.urls)),
+    path('api-test', include('rest_framework.urls', namespace='rest_framework')),
+
 ]

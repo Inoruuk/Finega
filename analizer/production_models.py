@@ -146,7 +146,7 @@ class DataInfoSciage(models.Model):
 
 
 class InfosSciage(models.Model):
-	data_info_sciage = models.ArrayField(model_container=DataInfoSciage)
+	data_info_sciage = models.ArrayModelField(model_container=DataInfoSciage)
 
 	@classmethod
 	def create(cls, param: dict):
@@ -203,7 +203,7 @@ class HeureEvenement(models.Model):
 
 
 class CausesInterruptionsTable(models.Model):
-	evenement = models.ArrayField(model_container=DureeEvenement)
+	evenement = models.ArrayModelField(model_container=DureeEvenement)
 
 	class Meta:
 		abstract = True
@@ -220,7 +220,7 @@ class CausesInterruptionsTable(models.Model):
 
 
 class CausesInterruptionsSciage(models.Model):
-	evenement = models.ArrayField(model_container=DureeEvenement)
+	evenement = models.ArrayModelField(model_container=DureeEvenement)
 
 	class Meta:
 		abstract = True
@@ -237,7 +237,7 @@ class CausesInterruptionsSciage(models.Model):
 
 
 class CausesRescans(models.Model):
-	evenement = models.ArrayField(model_container=HeureEvenement)
+	evenement = models.ArrayModelField(model_container=HeureEvenement)
 
 	class Meta:
 		abstract = True
@@ -319,12 +319,12 @@ class InfosCycleAutomate(models.Model):
 	heure_table_analyse_en_attente_chargement = models.CharField(max_length=32)
 	heure_depart_transfert_table_vers_portique = models.CharField(max_length=32)
 	heure_depart_griffage_sciage = models.CharField(max_length=32)
-	#	temps = models.ArrayField(model_container=Temps)
+	#	temps = models.ArrayModelField(model_container=Temps)
 	vitesse_sciage_canter_m_min = models.PositiveIntegerField()
 	temps_saturation_ejection_tt_vers_twin = models.PositiveIntegerField()
 
-	#	info_temps_de_cycle = models.ArrayField(model_container=InfoTempsDeCycles)
-	#	info_cycles = models.ArrayField(model_container=InfoCycles)
+	#	info_temps_de_cycle = models.ArrayModelField(model_container=InfoTempsDeCycles)
+	#	info_cycles = models.ArrayModelField(model_container=InfoCycles)
 	#	pas utilisé, a modifier quand ce sera le cas
 
 	class Meta:
@@ -507,14 +507,14 @@ class Sciage(models.Model):
 
 
 class PassageGrume(models.Model):
-	premier_passage_sans_planche = models.EmbeddedField(model_container=Sciage)
-	retour_premier_passage_sans_planche = models.EmbeddedField(model_container=Sciage)
-	premier_passage_avec_planche = models.EmbeddedField(model_container=Sciage)
-	retour_premier_passage_avec_planche = models.EmbeddedField(model_container=Sciage)
-	second_passage_avec_planche = models.EmbeddedField(model_container=Sciage)
-	retour_second_passage_avec_planche = models.EmbeddedField(model_container=Sciage)
-	troisieme_passage_avec_planche = models.EmbeddedField(model_container=Sciage)
-	retour_dernier_dassage_avec_planche_devant_canter = models.EmbeddedField(model_container=Sciage)
+	premier_passage_sans_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_premier_passage_sans_planche = models.EmbeddedModelField(model_container=Sciage)
+	premier_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_premier_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	second_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_second_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	troisieme_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_dernier_dassage_avec_planche_devant_canter = models.EmbeddedModelField(model_container=Sciage)
 
 	class Meta:
 		abstract = True
@@ -539,16 +539,16 @@ class PassageGrume(models.Model):
 
 
 class PassageNoyau(models.Model):
-	premier_passage_sans_planche = models.EmbeddedField(model_container=Sciage)
-	retour_premier_passage_sans_planche_sans_refente = models.EmbeddedField(model_container=Sciage)
-	retour_premier_passage_sans_planche_avec_refente = models.EmbeddedField(model_container=Sciage)
-	premier_passage_avec_planche = models.EmbeddedField(model_container=Sciage)
-	retour_premier_passage_avec_planche = models.EmbeddedField(model_container=Sciage)
-	second_passage_avec_planche = models.EmbeddedField(model_container=Sciage)
-	retour_second_passage_avec_planche = models.EmbeddedField(model_container=Sciage)
-	troisieme_passage_avec_planche = models.EmbeddedField(model_container=Sciage)
-	retour_dernier_passage_avec_planche_sans_refente = models.EmbeddedField(model_container=Sciage)
-	retour_dernier_passage_avec_planche_avec_refente = models.EmbeddedField(model_container=Sciage)
+	premier_passage_sans_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_premier_passage_sans_planche_sans_refente = models.EmbeddedModelField(model_container=Sciage)
+	retour_premier_passage_sans_planche_avec_refente = models.EmbeddedModelField(model_container=Sciage)
+	premier_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_premier_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	second_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_second_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	troisieme_passage_avec_planche = models.EmbeddedModelField(model_container=Sciage)
+	retour_dernier_passage_avec_planche_sans_refente = models.EmbeddedModelField(model_container=Sciage)
+	retour_dernier_passage_avec_planche_avec_refente = models.EmbeddedModelField(model_container=Sciage)
 
 	class Meta:
 		abstract = True
@@ -578,10 +578,10 @@ class PassageNoyau(models.Model):
 
 
 class InfoTempsDeCycleSciage(models.Model):
-	passage_grume = models.EmbeddedField(model_container=PassageGrume)
-	passage_noyau = models.EmbeddedField(model_container=PassageNoyau)
-	evacuation_noyau_sans_refente = models.EmbeddedField(model_container=Sciage)
-	refente_noyau = models.EmbeddedField(model_container=Sciage)
+	passage_grume = models.EmbeddedModelField(model_container=PassageGrume)
+	passage_noyau = models.EmbeddedModelField(model_container=PassageNoyau)
+	evacuation_noyau_sans_refente = models.EmbeddedModelField(model_container=Sciage)
+	refente_noyau = models.EmbeddedModelField(model_container=Sciage)
 
 	class Meta:
 		abstract = True
