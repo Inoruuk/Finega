@@ -1,0 +1,1196 @@
+{
+  "Date": "2020-01-08T15:00:14",
+  "InputsTOR": {
+    "Racks": {
+      "Racks": [
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      ]
+    }
+  },
+  "OutputsTOR": {
+    "Racks": {
+      "Racks": [
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "Valeurs": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      ]
+    }
+  },
+  "InputsAna": {
+    "Racks": {
+      "Racks": [
+        {
+          "Valeurs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "Valeurs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "OutputsAna": {
+    "Racks": {
+      "Racks": [
+        {
+          "Valeurs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "Valeurs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "Valeurs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "AxesHydraulique": {
+    "Axes": [
+      {
+        "Etat": 0,
+        "Position": 0,
+        "Vitesse": 0
+      },
+      {
+        "Etat": 0,
+        "Position": 0,
+        "Vitesse": 0
+      },
+      {
+        "Etat": 0,
+        "Position": 0,
+        "Vitesse": 0
+      },
+      {
+        "Etat": 0,
+        "Position": 0,
+        "Vitesse": 0
+      },
+      {
+        "Etat": 0,
+        "Position": 0,
+        "Vitesse": 0
+      },
+      {
+        "Etat": 0,
+        "Position": 0,
+        "Vitesse": 0
+      },
+      {
+        "Etat": 0,
+        "Position": 0,
+        "Vitesse": 0
+      },
+      {
+        "Etat": 0,
+        "Position": 0,
+        "Vitesse": 0
+      },
+      {
+        "Etat": 0,
+        "Position": 0,
+        "Vitesse": 0
+      },
+      {
+        "Etat": 0,
+        "Position": 0,
+        "Vitesse": 0
+      },
+      {
+        "Etat": 0,
+        "Position": 0,
+        "Vitesse": 0
+      },
+      {
+        "Etat": 0,
+        "Position": 0,
+        "Vitesse": 0
+      }
+    ]
+  },
+  "AxesPosition": {
+    "Axes": [
+      {
+        "Etat1": 0,
+        "Etat2": 0,
+        "Position": 2820.0,
+        "Vitesse": 40
+      },
+      {
+        "Etat1": 0,
+        "Etat2": 0,
+        "Position": 0.0,
+        "Vitesse": 0
+      },
+      {
+        "Etat1": 0,
+        "Etat2": 0,
+        "Position": 0.0,
+        "Vitesse": 0
+      },
+      {
+        "Etat1": 0,
+        "Etat2": 0,
+        "Position": 0.0,
+        "Vitesse": 0
+      }
+    ]
+  },
+  "AxesVitesse": {
+    "Axes": [
+      {
+        "Etat1": 0,
+        "Etat2": 0,
+        "Intensite": 0,
+        "Vitesse": 0
+      }
+    ]
+  },
+  "AxesServoVitesse": {
+    "Axes": [
+      {
+        "Etat": 0,
+        "Reserve": 0,
+        "Vitesse": 0
+      },
+      {
+        "Etat": 0,
+        "Reserve": 0,
+        "Vitesse": 0
+      }
+    ]
+  },
+  "Cycles": {
+    "Cycles": [
+      {
+        "Etat": 0,
+        "Valeur": 0
+      },
+      {
+        "Etat": 0,
+        "Valeur": 0
+      },
+      {
+        "Etat": 0,
+        "Valeur": 0
+      },
+      {
+        "Etat": 0,
+        "Valeur": 0
+      },
+      {
+        "Etat": 0,
+        "Valeur": 0
+      },
+      {
+        "Etat": 0,
+        "Valeur": 0
+      },
+      {
+        "Etat": 0,
+        "Valeur": 0
+      }
+    ]
+  },
+  "Messagerie": {
+    "Messages": [
+      {
+        "TypeMessage": 0,
+        "Messages": [
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          }
+        ]
+      },
+      {
+        "TypeMessage": 1,
+        "Messages": [
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          }
+        ]
+      },
+      {
+        "TypeMessage": 2,
+        "Messages": [
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          }
+        ]
+      },
+      {
+        "TypeMessage": 0,
+        "Messages": [
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          }
+        ]
+      },
+      {
+        "TypeMessage": 1,
+        "Messages": [
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          }
+        ]
+      },
+      {
+        "TypeMessage": 2,
+        "Messages": [
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          }
+        ]
+      },
+      {
+        "TypeMessage": 0,
+        "Messages": [
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          }
+        ]
+      },
+      {
+        "TypeMessage": 1,
+        "Messages": [
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          }
+        ]
+      },
+      {
+        "TypeMessage": 2,
+        "Messages": [
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          },
+          {
+            "Messages": 0
+          }
+        ]
+      }
+    ]
+  }
+}

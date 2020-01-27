@@ -1,0 +1,484 @@
+﻿Theme;Numero Controleur;Index;Groupe;Repere;Libelle;Type
+Input_TOR;0;0;0;%I0.0;Comptage rapide 0 voie A;Bool
+Input_TOR;0;1;0;%I0.1;Comptage rapide 0 voie B;Bool
+Input_TOR;0;2;0;%I0.2;;Bool
+Input_TOR;0;3;0;%I0.3;;Bool
+Input_TOR;0;4;0;%I0.4;Comptage rapide 1 voie A;Bool
+Input_TOR;0;5;0;%I0.5;Comptage rapide 1 voie B;Bool
+Input_TOR;0;6;0;%I0.6;FdC limite fermeture pince AR NC;Bool
+Input_TOR;0;7;0;%I0.7;FdC limite ouverture pince AR NC;Bool
+Input_TOR;0;0;0;%I1.0;FdC init pince arrière ;Bool
+Input_TOR;0;1;0;%I1.1;Variateur pince AR OK;Bool
+Input_TOR;0;2;0;%I1.2;Info variateur grume griffée;Bool
+Input_TOR;0;3;0;%I1.3;Aligneur haut step feeder sorti;Bool
+Input_TOR;0;4;0;%I1.4;Mécanisation Entrée Thermiques;Bool
+Input_TOR;0;5;0;%I1.5;Mécanisation Sortie Thermiques (hors sortie 3);Bool
+Input_TOR;0;0;1;%I4.0;Armoire sous tension (AU réarmé et Géneral marche);Bool
+Input_TOR;0;1;1;%I4.1;Enceinte de travail fermée zone1: MasterTwin;Bool
+Input_TOR;0;2;1;%I4.2;Défaut thermique Centrale hydraulique;Bool
+Input_TOR;0;3;1;%I4.3;Centrale hydraulique prête;Bool
+Input_TOR;0;4;1;%I4.4;Centrale hydraulique en marche;Bool
+Input_TOR;0;5;1;%I4.5;Défaut thermique Batis;Bool
+Input_TOR;0;6;1;%I4.6;Batis gauche en marche;Bool
+Input_TOR;0;7;1;%I4.7;Batis lames tendues;Bool
+Input_TOR;0;0;1;%I5.0;Présence air comprimée;Bool
+Input_TOR;0;1;1;%I5.1;Défaut thermique Déchets Vibreur et raclette);Bool
+Input_TOR;0;2;1;%I5.2;Alimentation servo-distributeurs OK;Bool
+Input_TOR;0;3;1;%I5.3;Défaut thermique Canters;Bool
+Input_TOR;0;4;1;%I5.4;Canter gauche en marche;Bool
+Input_TOR;0;5;1;%I5.5;Enceinte de travail fermée (Zone 2 = ???) ;Bool
+Input_TOR;0;6;1;%I5.6;Défaut thermique Machine (Entrainements guides);Bool
+Input_TOR;0;7;1;%I5.7;Défaut thermique Table entrée;Bool
+Input_TOR;0;0;2;%I6.0;Coffret scanner sous tension (AU réarmé et Géneral marche);Bool
+Input_TOR;0;1;2;%I6.1;;Bool
+Input_TOR;0;2;2;%I6.2;Bois en bout du convoyeur Client;Bool
+Input_TOR;0;3;2;%I6.3;Annulation éjection vers scie à grume;Bool
+Input_TOR;0;4;2;%I6.4;Vibreur 1 en marche;Bool
+Input_TOR;0;5;2;%I6.5;Vibreur 2 en marche;Bool
+Input_TOR;0;6;2;%I6.6;Vibreur 3 en marche;Bool
+Input_TOR;0;7;2;%I6.7;Redler en marche ;Bool
+Input_TOR;0;0;2;%I7.0;Convoyeur Entree: Capteur recul ejecteur;Bool
+Input_TOR;0;1;2;%I7.1;Info frein pince AR actionné ;Bool
+Input_TOR;0;2;2;%I7.2;Convoyeur Entrée: présence bois mesure longueur;Bool
+Input_TOR;0;3;2;%I7.3;Convoyeur Entrée : présence bois sortie pré-scanner;Bool
+Input_TOR;0;4;2;%I7.4;Convoyeur Entrée: bois en bout du convoyeur de mesure;Bool
+Input_TOR;0;5;2;%I7.5;Bati droit en marche;Bool
+Input_TOR;0;6;2;%I7.6;Canter droit en marche;Bool
+Input_TOR;0;7;2;%I7.7;Aligneur haut step feeder rentré;Bool
+Input_TOR;0;0;3;%I8.0;Step feeder position haute;Bool
+Input_TOR;0;1;3;%I8.1;Step feeder position basse;Bool
+Input_TOR;0;2;3;%I8.2;Presence Bois en bas du step feeder;Bool
+Input_TOR;0;3;3;%I8.3;Presence Bois en haut du step feeder;Bool
+Input_TOR;0;4;3;%I8.4;Palette de sécurité bout Convoyeur d'entrée;Bool
+Input_TOR;0;5;3;%I8.5;Table Entrée Quai Analyse Présence Bois QUAI AVANT;Bool
+Input_TOR;0;6;3;%I8.6;Table Entrée Quai Analyse: Présence Bois;Bool
+Input_TOR;0;7;3;%I8.7;Poste chargement machine: présence bois;Bool
+Input_TOR;0;0;3;%I9.0;;Bool
+Input_TOR;0;1;3;%I9.1;;Bool
+Input_TOR;0;2;3;%I9.2;Table Entrée Griffe Analyse: Avant FdC sortie;Bool
+Input_TOR;0;3;3;%I9.3;Table Entrée Griffe Analyse: Avant FdC rentrée;Bool
+Input_TOR;0;4;3;%I9.4;Réchauffeur centrale en marche;Bool
+Input_TOR;0;5;3;%I9.5;Chargeur grume de calibration rentré ;Bool
+Input_TOR;0;6;3;%I9.6;Cellule ralenti éjecteur n°2;Bool
+Input_TOR;0;7;3;%I9.7;Cellule d'arrêt éjecteur 2;Bool
+Input_TOR;0;0;4;%I10.0;Graissage niveau bas;Bool
+Input_TOR;0;1;4;%I10.1;Défaut Graissage centralisé;Bool
+Input_TOR;0;2;4;%I10.2;;Bool
+Input_TOR;0;3;4;%I10.3;Portique griffe arrière: autorisation dégagement;Bool
+Input_TOR;0;4;4;%I10.4;Portique griffe avant: Contrôle cote;Bool
+Input_TOR;0;5;4;%I10.5;Marche ventilation forcée portique;Bool
+Input_TOR;0;6;4;%I10.6;;Bool
+Input_TOR;0;7;4;%I10.7;Ejecteur sortie 1: bois déclenchement sur butée;Bool
+Input_TOR;0;0;4;%I11.0;Ejecteur sortie 1: détecteur taquet;Bool
+Input_TOR;0;1;4;%I11.1;Ejecteur sortie 2: passage bois après butée;Bool
+Input_TOR;0;2;4;%I11.2;Ejecteur sortie 2: bois declenchement sur butée;Bool
+Input_TOR;0;3;4;%I11.3;Ejecteur sortie 2: détecteur taquet à droite;Bool
+Input_TOR;0;4;4;%I11.4;Ejecteur sortie 2: détecteur taquet à gauche;Bool
+Input_TOR;0;5;4;%I11.5;Sélection/forçage éjection planches à gauche depuis la déligneuse;Bool
+Input_TOR;0;6;4;%I11.6;Sélection/forçage éjection planches à droite depuis la déligneuse;Bool
+Input_TOR;0;7;4;%I11.7;;Bool
+Input_TOR;1;0;5;%I0.0;Comptage rapide 0 voie A;Bool
+Input_TOR;1;1;5;%I0.1;Comptage rapide 0 voie B;Bool
+Input_TOR;1;2;5;%I0.2;;Bool
+Input_TOR;1;3;5;%I0.3;;Bool
+Input_TOR;1;4;5;%I0.4;Comptage rapide 1 voie A;Bool
+Input_TOR;1;5;5;%I0.5;Comptage rapide 1 voie B;Bool
+Input_TOR;1;6;5;%I0.6;;Bool
+Input_TOR;1;7;5;%I0.7;;Bool
+Input_TOR;1;0;5;%I1.0;Mécanisation de sortie en arrêt;Bool
+Input_TOR;1;1;5;%I1.1;Mécanisation de sortie en marche;Bool
+Input_TOR;1;2;5;%I1.2;;Bool
+Input_TOR;1;3;5;%I1.3;;Bool
+Input_TOR;1;4;5;%I1.4;Mécanisation: Entrée en arrêt;Bool
+Input_TOR;1;5;5;%I1.5;Mécanisation: Entrée en marche;Bool
+Input_TOR;1;0;6;%I4.0;Bouton A Manipulateur 1;Bool
+Input_TOR;1;1;6;%I4.1;Bouton B manipulateur 1;Bool
+Input_TOR;1;2;6;%I4.2;Bouton C manipulateur 1;Bool
+Input_TOR;1;3;6;%I4.3;Bouton D manipulateur 1;Bool
+Input_TOR;1;4;6;%I4.4;Bouton E manipulateur 1;Bool
+Input_TOR;1;5;6;%I4.5;Bouton F manipulateur 1;Bool
+Input_TOR;1;6;6;%I4.6;Bouton G manipulateur 1;Bool
+Input_TOR;1;7;6;%I4.7;Bouton H manipulateur 1;Bool
+Input_TOR;1;0;6;%I5.0;Bouton I manipulateur 1;Bool
+Input_TOR;1;1;6;%I5.1;Bouton J manipulateur 1;Bool
+Input_TOR;1;2;6;%I5.2;Position 1 Manipulateur 1;Bool
+Input_TOR;1;3;6;%I5.3;Position 2 Manipulateur 1;Bool
+Input_TOR;1;4;6;%I5.4;Position 3 Manipulateur 1;Bool
+Input_TOR;1;5;6;%I5.5;Position 4 Manipulateur 1;Bool
+Input_TOR;1;6;6;%I5.6;Position 5/6 Manipulateur 1;Bool
+Input_TOR;1;7;6;%I5.7;Position 7/8 Manipulateur 1;Bool
+Input_TOR;1;0;7;%I6.0;Bouton A Manipulateur 2;Bool
+Input_TOR;1;1;7;%I6.1;Bouton B manipulateur 2;Bool
+Input_TOR;1;2;7;%I6.2;Bouton C manipulateur 2;Bool
+Input_TOR;1;3;7;%I6.3;Bouton D manipulateur 2;Bool
+Input_TOR;1;4;7;%I6.4;Bouton E manipulateur 2;Bool
+Input_TOR;1;5;7;%I6.5;Bouton F manipulateur 2;Bool
+Input_TOR;1;6;7;%I6.6;Bouton G manipulateur 2;Bool
+Input_TOR;1;7;7;%I6.7;Bouton H manipulateur 2;Bool
+Input_TOR;1;0;7;%I7.0;Bouton I manipulateur 2;Bool
+Input_TOR;1;1;7;%I7.1;Bouton J manipulateur 2;Bool
+Input_TOR;1;2;7;%I7.2;Position 1 Manipulateur 2;Bool
+Input_TOR;1;3;7;%I7.3;Position 2 Manipulateur 2;Bool
+Input_TOR;1;4;7;%I7.4;Position 3 Manipulateur 2;Bool
+Input_TOR;1;5;7;%I7.5;Position 4 Manipulateur 2;Bool
+Input_TOR;1;6;7;%I7.6;Position 5/6 Manipulateur 2;Bool
+Input_TOR;1;7;7;%I7.7;Position 7/8 Manipulateur 2;Bool
+Input_TOR;1;0;8;%I8.0;Pupitre gauche - Bouton 1: cycle automatique TTW arrêt;Bool
+Input_TOR;1;1;8;%I8.1;Pupitre gauche - Bouton 2: cycle automatique TTW marche;Bool
+Input_TOR;1;2;8;%I8.2;Pupitre gauche - Bouton 3: cycle table TTW interruption;Bool
+Input_TOR;1;3;8;%I8.3;Pupitre gauche - Bouton 4: Interdiction envoi du bois sur méca d'entrée;Bool
+Input_TOR;1;4;8;%I8.4;Pupitre gauche - Bouton 5: Autorisation approvisionnement CV entrée;Bool
+Input_TOR;1;5;8;%I8.5;Pupitre gauche - Bouton 6: ;Bool
+Input_TOR;1;6;8;%I8.6;Pupitre gauche - Bouton 7: ;Bool
+Input_TOR;1;7;8;%I8.7;Pupitre gauche - Bouton 8: ;Bool
+Input_TOR;1;0;8;%I9.0;Pupitre gauche - Bouton 9:;Bool
+Input_TOR;1;1;8;%I9.1;Pupitre gauche - Bouton 10:;Bool
+Input_TOR;1;2;8;%I9.2;Pupitre gauche - Bouton 11: Attente 1 = marche forcée CV client;Bool
+Input_TOR;1;3;8;%I9.3;Pupitre gauche - Bouton 12: Attente 2;Bool
+Input_TOR;1;4;8;%I9.4;Pupitre gauche - Bouton 13: Attente 3 = marche forcée transfert n°2;Bool
+Input_TOR;1;5;8;%I9.5;;Bool
+Input_TOR;1;6;8;%I9.6;;Bool
+Input_TOR;1;7;8;%I9.7;Sécurité siège;Bool
+Input_TOR;1;0;9;%I10.0;Pupitre droit - Bouton 16: ;Bool
+Input_TOR;1;1;9;%I10.1;Pupitre droit - Bouton 17: interdiction chargement table;Bool
+Input_TOR;1;2;9;%I10.2;Pupitre droit - Bouton 18: ;Bool
+Input_TOR;1;3;9;%I10.3;;Bool
+Input_TOR;1;4;9;%I10.4;Pupitre droit - Bouton 20: Attente 4;Bool
+Input_TOR;1;5;9;%I10.5;Pupitre droit - Bouton 21: Attente 5;Bool
+Input_TOR;1;6;9;%I10.6;Pupitre droit - Bouton 22: Attente 6;Bool
+Input_TOR;1;7;9;%I10.7;Pupitre droit - Bouton 23:;Bool
+Input_TOR;1;0;9;%I11.0;Pupitre droit - Bouton 24: ;Bool
+Input_TOR;1;1;9;%I11.1;Pupitre droit - Bouton 25: Ejection noyau mauvaise qualité;Bool
+Input_TOR;1;2;9;%I11.2;Pédale 1;Bool
+Input_TOR;1;3;9;%I11.3;Pédale 2;Bool
+Input_TOR;1;4;9;%I11.4;Pédale 3;Bool
+Input_TOR;1;5;9;%I11.5;Pédale 4;Bool
+Input_TOR;1;6;9;%I11.6;Pédale 5;Bool
+Input_TOR;1;7;9;%I11.7;Pédale 6;Bool
+Input_TOR;2;0;10;%I0.0;;Bool
+Input_TOR;2;1;10;%I0.1;;Bool
+Input_TOR;2;2;10;%I0.2;;Bool
+Input_TOR;2;3;10;%I0.3;;Bool
+Input_TOR;2;4;10;%I0.4;;Bool
+Input_TOR;2;5;10;%I0.5;;Bool
+Input_TOR;2;6;10;%I0.6;;Bool
+Input_TOR;2;7;10;%I0.7;;Bool
+Input_TOR;2;0;10;%I1.0;;Bool
+Input_TOR;2;1;10;%I1.1;;Bool
+Input_TOR;2;2;10;%I1.2;;Bool
+Input_TOR;2;3;10;%I1.3;;Bool
+Input_TOR;2;4;10;%I1.4;;Bool
+Input_TOR;2;5;11;%I1.5;;Bool
+Input_TOR;2;0;11;%I4.0;Présence bois devant guides Batis;Bool
+Input_TOR;2;1;11;%I4.1;Présence bois devant lames Batis;Bool
+Input_TOR;2;2;11;%I4.2;Présence bois sortie lames Batis;Bool
+Input_TOR;2;3;11;%I4.3;;Bool
+Input_TOR;2;4;11;%I4.4;;Bool
+Input_TOR;2;5;11;%I4.5;;Bool
+Input_TOR;2;6;11;%I4.6;;Bool
+Input_TOR;2;7;11;%I4.7;;Bool
+Input_TOR;2;0;11;%I5.0;;Bool
+Input_TOR;2;1;11;%I5.1;;Bool
+Input_TOR;2;2;11;%I5.2;;Bool
+Input_TOR;2;3;11;%I5.3;;Bool
+Input_TOR;2;4;11;%I5.4;;Bool
+Input_TOR;2;5;11;%I5.5;;Bool
+Input_TOR;2;6;11;%I5.6;Bati gauche en position mini;Bool
+Input_TOR;2;7;11;%I5.7;Bati droit en position mini;Bool
+Input_TOR;3;0;12;%I0.0;Comptage rapide 0 voie A;Bool
+Input_TOR;3;1;12;%I0.1;Comptage rapide 0 voie B;Bool
+Input_TOR;3;2;12;%I0.2;;Bool
+Input_TOR;3;3;12;%I0.3;;Bool
+Input_TOR;3;4;12;%I0.4;Comptage rapide 2 voie A;Bool
+Input_TOR;3;5;12;%I0.5;Comptage rapide 2 voie B;Bool
+Input_TOR;3;6;12;%I0.6;;Bool
+Input_TOR;3;7;12;%I0.7;;Bool
+Input_TOR;3;0;12;%I1.0;Table Entrée Griffe Analyse Arrière: FdC sortie;Bool
+Input_TOR;3;1;12;%I1.1;Table Entrée Griffe Analyse Arrière: FdC rentré;Bool
+Input_TOR;3;2;12;%I1.2;Table Entrée Quai analyse Présence bois sur quai arrière;Bool
+Input_TOR;3;3;12;%I1.3;;Bool
+Input_TOR;3;4;12;%I1.4;;Bool
+Input_TOR;3;5;12;%I1.5;;Bool
+;;;;;;
+Output_TOR;0;0;0;%Q0.0;;Bool
+Output_TOR;0;1;0;%Q0.1;;Bool
+Output_TOR;0;2;0;%Q0.2;Départ analyse pour scanner;Bool
+Output_TOR;0;3;0;%Q0.3;;Bool
+Output_TOR;0;4;0;%Q0.4;;Bool
+Output_TOR;0;5;0;%Q0.5;;Bool
+Output_TOR;0;6;0;%Q0.6;;Bool
+Output_TOR;0;7;0;%Q0.7;;Bool
+Output_TOR;0;0;0;%Q1.0;;Bool
+Output_TOR;0;1;0;%Q1.1;;Bool
+Output_TOR;0;0;1;%Q4.0;Interdiction avance convoyeur Client;Bool
+Output_TOR;0;1;1;%Q4.1;;Bool
+Output_TOR;0;2;1;%Q4.2;;Bool
+Output_TOR;0;3;1;%Q4.3;Arrêt convoyeur entrée si distance avant > distance d'arrêt;Bool
+Output_TOR;0;4;1;%Q4.4;Convoyeur Entrée: Ejection rentrée;Bool
+Output_TOR;0;5;1;%Q4.5;Convoyeur Entrée: Ejection sortie;Bool
+Output_TOR;0;6;1;%Q4.6;Montée du step-feeder;Bool
+Output_TOR;0;7;1;%Q4.7;Descente du step-feeder;Bool
+Output_TOR;0;0;1;%Q5.0;Montée butée alignement bois en haut du step-feeder;Bool
+Output_TOR;0;1;1;%Q5.1;Descente butée alignement bois en haut du step-feeder;Bool
+Output_TOR;0;2;1;%Q5.2;Avance diabolos pour alignement bois en haut du step-feeder;Bool
+Output_TOR;0;3;1;%Q5.3;Recul diabolos en haut du step-feeder;Bool
+Output_TOR;0;4;1;%Q5.4;Centrale Hydraulique: marche;Bool
+Output_TOR;0;5;1;%Q5.5;Bati gauche: marche;Bool
+Output_TOR;0;6;1;%Q5.6;Bati droit: marche;Bool
+Output_TOR;0;7;1;%Q5.7;Sortie vérin chargeur;Bool
+Output_TOR;0;0;2;%Q6.0;Canter Gauche marche;Bool
+Output_TOR;0;1;2;%Q6.1;Canter Droit marche;Bool
+Output_TOR;0;2;2;%Q6.2;Canter sélection vitesse 1;Bool
+Output_TOR;0;3;2;%Q6.3;Canter sélection vitesse 2;Bool
+Output_TOR;0;4;2;%Q6.4;Bati guide Entrainement validation;Bool
+Output_TOR;0;5;2;%Q6.5;Graissage;Bool
+Output_TOR;0;6;2;%Q6.6;Portique variateurs validation;Bool
+Output_TOR;0;7;2;%Q6.7;Bati guide Entrainement validation marche arrière;Bool
+Output_TOR;0;0;2;%Q7.0;Validation frein Pince Arrière;Bool
+Output_TOR;0;1;2;%Q7.1;Table Entrée: Montée index chargement quais analyse pour retenir le bois;Bool
+Output_TOR;0;2;2;%Q7.2;Marche avant Variateur Griffe arrière Portique ;Bool
+Output_TOR;0;3;2;%Q7.3;Table Entrée Griffe Analyse avant: Sortie;Bool
+Output_TOR;0;4;2;%Q7.4;Table Entrée Griffe Analyse avant: Rentrée;Bool
+Output_TOR;0;5;2;%Q7.5;Reset défaut Variateur Griffe arrière Portique;Bool
+Output_TOR;0;6;2;%Q7.6;Table Entrée Rouleau soutien: Montée;Bool
+Output_TOR;0;7;2;%Q7.7;Spike Roll Canter : fermeture;Bool
+Output_TOR;0;0;3;%Q8.0;Marche arrière Variateur Griffe arrière Portique;Bool
+Output_TOR;0;1;3;%Q8.1;Rouleaux Sortie 1: marche;Bool
+Output_TOR;0;2;3;%Q8.2;Ejection Sortie 1: Gauche;Bool
+Output_TOR;0;3;3;%Q8.3;Ejection Sortie 1: Droite;Bool
+Output_TOR;0;4;3;%Q8.4;Ejection Sortie 1: GV;Bool
+Output_TOR;0;5;3;%Q8.5;Ejection Sortie 1: montée butée;Bool
+Output_TOR;0;6;3;%Q8.6;;Bool
+Output_TOR;0;7;3;%Q8.7;Ejection Sortie 2: GV;Bool
+Output_TOR;0;0;3;%Q9.0;Rouleaux Sortie 2: marche;Bool
+Output_TOR;0;1;3;%Q9.1;Ejection Sortie 2: Gauche;Bool
+Output_TOR;0;2;3;%Q9.2;Ejection Sortie 2: Droite;Bool
+Output_TOR;0;3;3;%Q9.3;Ejection Sortie 2: GV;Bool
+Output_TOR;0;4;3;%Q9.4;Demande bois 1/2 lune client;Bool
+Output_TOR;0;5;3;%Q9.5;Transfert sortie 2 : marche;Bool
+Output_TOR;0;6;3;%Q9.6;Demande mise en marche centrale client;Bool
+Output_TOR;0;7;3;%Q9.7;Information recul CV entrée;Bool
+Output_TOR;1;0;4;%Q0.0;Cycle automatique TTW en marche (Voyant);Bool
+Output_TOR;1;1;4;%Q0.1;Cycle automatique TTW en interruption (Voyant);Bool
+Output_TOR;1;2;4;%Q0.2;Défaut (Voyant);Bool
+Output_TOR;1;3;4;%Q0.3;;Bool
+Output_TOR;1;4;4;%Q0.4;;Bool
+Output_TOR;1;5;4;%Q0.5;;Bool
+Output_TOR;1;6;4;%Q0.6;Attente 1 (Voyant);Bool
+Output_TOR;1;7;4;%Q0.7;Attente 2 (Voyant);Bool
+Output_TOR;1;0;4;%Q1.0;Attente 3 (Voyant);Bool
+Output_TOR;1;1;4;%Q1.1;Mécanisation de sortie en marche (Voyant);Bool
+Output_TOR;1;0;5;%Q4.0;;Bool
+Output_TOR;1;1;5;%Q4.1;Bouton noyau mauvaise qualité (Voyant);Bool
+Output_TOR;1;2;5;%Q4.2;Mécanisation entrée en marche (Voyant);Bool
+Output_TOR;1;3;5;%Q4.3;;Bool
+Output_TOR;1;4;5;%Q4.4;Attente 4 (Voyant);Bool
+Output_TOR;1;5;5;%Q4.5;Attente 5 (Voyant);Bool
+Output_TOR;1;6;5;%Q4.6;Attente 6 (Voyant);Bool
+Output_TOR;1;7;5;%Q4.7;;Bool
+Output_TOR;1;0;5;%Q5.0;;Bool
+Output_TOR;1;1;5;%Q5.1;;Bool
+Output_TOR;1;2;5;%Q5.2;;Bool
+Output_TOR;1;3;5;%Q5.3;;Bool
+Output_TOR;1;4;5;%Q5.4;;Bool
+Output_TOR;1;5;5;%Q5.5;;Bool
+Output_TOR;1;6;5;%Q5.6;;Bool
+Output_TOR;1;7;5;%Q5.7;;Bool
+Output_TOR;2;0;6;%Q0.0;;Bool
+Output_TOR;2;1;6;%Q0.1;;Bool
+Output_TOR;2;2;6;%Q0.2;;Bool
+Output_TOR;2;3;6;%Q0.3;;Bool
+Output_TOR;2;4;6;%Q0.4;;Bool
+Output_TOR;2;5;6;%Q0.5;;Bool
+Output_TOR;2;6;6;%Q0.6;;Bool
+Output_TOR;2;7;6;%Q0.7;;Bool
+Output_TOR;2;0;6;%Q1.0;;Bool
+Output_TOR;2;1;6;%Q1.1;;Bool
+Output_TOR;2;0;7;%Q4.0;Soufflettes;Bool
+Output_TOR;2;1;7;%Q4.1;Pulvérisation lames batis;Bool
+Output_TOR;2;2;7;%Q4.2;;Bool
+Output_TOR;2;3;7;%Q4.3;;Bool
+Output_TOR;2;4;7;%Q4.4;;Bool
+Output_TOR;2;5;7;%Q4.5;;Bool
+Output_TOR;2;6;7;%Q4.6;;Bool
+Output_TOR;2;7;7;%Q4.7;;Bool
+Output_TOR;2;0;7;%Q5.0;;Bool
+Output_TOR;2;1;7;%Q5.1;;Bool
+Output_TOR;2;2;7;%Q5.2;;Bool
+Output_TOR;2;3;7;%Q5.3;;Bool
+Output_TOR;2;4;7;%Q5.4;;Bool
+Output_TOR;2;5;7;%Q5.5;;Bool
+Output_TOR;2;6;7;%Q5.6;;Bool
+Output_TOR;2;7;7;%Q5.7;;Bool
+Output_TOR;3;0;8;%Q0.0;Table Entrée Griffe Analyse arrière: Sortie;Bool
+Output_TOR;3;1;8;%Q0.1;Table Entrée Griffe Analyse arrière: Rentrée;Bool
+Output_TOR;3;2;8;%Q0.2;Table Entrée: montée index chargement quais analyse pour retenir le bois;Bool
+Output_TOR;3;3;8;%Q0.3;;Bool
+Output_TOR;3;4;8;%Q0.4;;Bool
+Output_TOR;3;5;8;%Q0.5;;Bool
+Output_TOR;3;6;8;%Q0.6;;Bool
+Output_TOR;3;7;8;%Q0.7;;Bool
+Output_TOR;3;0;8;%Q1.0;;Bool
+Output_TOR;3;1;8;%Q1.1;;Bool
+;;;;;;
+Input_ANA;0;0;0;%IW0;;Int32
+Input_ANA;0;1;0;%IW1;;Int32
+Input_ANA;0;2;0;%IW2;;Int32
+Input_ANA;0;3;0;%IW3;;Int32
+Input_ANA;0;4;0;%IW4;Convoyeur Entrée: Mesure hauteur grume;Int32
+Input_ANA;0;5;0;%IW5;Température huile Centrale hydraulique;Int32
+Input_ANA;0;6;0;%IW6;Pression huile Centrale hydraulique;Int32
+Input_ANA;0;7;0;%IW7;Table Entrée Analyse Quai Arrière: Grume griffée;Int32
+Input_ANA;0;8;0;%IW8;Niveau huile Centrale hydraulique;Int32
+Input_ANA;0;9;0;%IW9;;Int32
+Input_ANA;0;10;0;%IW10;;Int32
+Input_ANA;0;11;0;%IW11;;Int32
+Input_ANA;2;0;1;%IW0;;Int32
+Input_ANA;2;1;1;%IW1;;Int32
+Input_ANA;2;2;1;%IW2;;Int32
+Input_ANA;2;3;1;%IW3;Déviation lame Batis gauche;Int32
+Input_ANA;2;4;1;%IW4;Déviation lame Batis droit;Int32
+;;;;;;
+Output_ANA;0;0;0;%QW0;;Int32
+Output_ANA;0;1;0;%QW1;;Int32
+Output_ANA;0;2;0;%QW2;;Int32
+Output_ANA;0;3;0;%QW3;;Int32
+Output_ANA;0;4;0;%QW4;;Int32
+Output_ANA;0;5;0;%QW5;;Int32
+Output_ANA;0;6;0;%QW6;Entrainement guides Batis;Int32
+Output_ANA;0;7;0;%QW7;Table entrée: Quai sciage avant horizontal;Int32
+Output_ANA;0;8;0;%QW8;Table entrée: Quai analyse avant vertical;Int32
+Output_ANA;0;9;0;%QW9;Table entrée: Quai sciage avant vertical;Int32
+Output_ANA;2;0;1;%QW0;;Int32
+Output_ANA;2;1;1;%QW1;;Int32
+Output_ANA;2;2;1;%QW2;;Int32
+Output_ANA;2;3;1;%QW3;Déplacement bati gauche;Int32
+Output_ANA;2;4;1;%QW4;Déplacement bati droit;Int32
+Output_ANA;2;5;1;%QW5;Déplacement Guide gauche;Int32
+Output_ANA;2;6;1;%QW6;Déplacement Guide droit;Int32
+Output_ANA;2;7;1;%QW7;Déplacement Canter gauche;Int32
+Output_ANA;2;8;1;%QW8;Déplacement Canter droit;Int32
+Output_ANA;2;9;1;%QW9;;Int32
+Output_ANA;2;10;1;%QW10;;Int32
+Output_ANA;3;0;2;%QW0;;Int32
+Output_ANA;3;1;2;%QW1;;Int32
+Output_ANA;3;2;2;%QW2;;Int32
+Output_ANA;3;3;2;%QW3;;Int32
+Output_ANA;3;4;2;%QW4;;Int32
+Output_ANA;3;5;2;%QW5;Table entrée: Quai analyse arrière vertical;Int32
+Output_ANA;3;6;2;%QW6;Table entrée: Quai sciage arrière vertical;Int32
+Output_ANA;3;7;2;%QW7;Table entrée: Quai sciage arrière horizontal;Int32
+Output_ANA;3;8;2;%QW8;;Int32
+;;;;;;
+AxeHydraulique;0;0;0;Quai de sciage avant horizontal;Etats;Bools
+AxeHydraulique;0;1;0;Quai de sciage avant horizontal;Position;Int32
+AxeHydraulique;0;2;0;Quai de sciage avant horizontal;Vitesse;Int32
+AxeHydraulique;0;0;1;Quai d'analyse avant vertical;Etats;Bools
+AxeHydraulique;0;1;1;Quai d'analyse avant vertical;Position;Int32
+AxeHydraulique;0;2;1;Quai d'analyse avant vertical;Vitesse;Int32
+AxeHydraulique;0;0;2;Quai de sciage avant vertical;Etats;Bools
+AxeHydraulique;0;1;2;Quai de sciage avant vertical;Position;Int32
+AxeHydraulique;0;2;2;Quai de sciage avant vertical;Vitesse;Int32
+AxeHydraulique;2;0;3;Quai de sciage arrière horizontal;Etats;Bools
+AxeHydraulique;2;1;3;Quai de sciage arrière horizontal;Position;Int32
+AxeHydraulique;2;2;3;Quai de sciage arrière horizontal;Vitesse;Int32
+AxeHydraulique;2;0;4;Quai analyse arrière vertical;Etats;Bools
+AxeHydraulique;2;1;4;Quai analyse arrière vertical;Position;Int32
+AxeHydraulique;2;2;4;Quai analyse arrière vertical;Vitesse;Int32
+AxeHydraulique;2;0;5;Quai de sciage arrière vertical;Etats;Bools
+AxeHydraulique;2;1;5;Quai de sciage arrière vertical;Position;Int32
+AxeHydraulique;2;2;5;Quai de sciage arrière vertical;Vitesse;Int32
+AxeHydraulique;3;0;6;Bati gauche;Etats;Bools
+AxeHydraulique;3;1;6;Bati gauche;Position;Int32
+AxeHydraulique;3;2;6;Bati gauche;Vitesse;Int32
+AxeHydraulique;3;0;7;Bati droit;Etats;Bools
+AxeHydraulique;3;1;7;Bati droit;Position;Int32
+AxeHydraulique;3;2;7;Bati droit;Vitesse;Int32
+AxeHydraulique;3;0;8;Canter gauche;Etats;Bools
+AxeHydraulique;3;1;8;Canter gauche;Position;Int32
+AxeHydraulique;3;2;8;Canter gauche;Vitesse;Int32
+AxeHydraulique;3;0;9;Canter droit;Etats;Bools
+AxeHydraulique;3;1;9;Canter droit;Position;Int32
+AxeHydraulique;3;2;9;Canter droit;Vitesse;Int32
+AxeHydraulique;3;0;10;Guide gauche;Etats;Bools
+AxeHydraulique;3;1;10;Guide gauche;Position;Int32
+AxeHydraulique;3;2;10;Guide gauche;Vitesse;Int32
+AxeHydraulique;3;0;11;Guide droit;Etats;Bools
+AxeHydraulique;3;1;11;Guide droit;Position;Int32
+AxeHydraulique;3;2;11;Guide droit;Vitesse;Int32
+;;;;;;
+AxePosition;0;0;0;Griffe avant portique sciage;Etats1;Bools
+AxePosition;0;1;0;Griffe avant portique sciage;Etats2;Bools
+AxePosition;0;2;0;Griffe avant portique sciage;Position;Real
+AxePosition;0;3;0;Griffe avant portique sciage;Vitesse;Int32
+AxePosition;0;0;1;Rotation griffe de sciage;Etats1;Bools
+AxePosition;0;1;1;Rotation griffe de sciage;Etats2;Bools
+AxePosition;0;2;1;Rotation griffe de sciage;Position;Real
+AxePosition;0;3;1;Rotation griffe de sciage;Vitesse;Int32
+AxePosition;0;0;2;Rotation griffe analyse;Etats1;Bools
+AxePosition;0;1;2;Rotation griffe analyse;Etats2;Bools
+AxePosition;0;2;2;Rotation griffe analyse;Position;Real
+AxePosition;0;3;2;Rotation griffe analyse;Vitesse;Int32
+AxePosition;0;0;3;Mise à longueur quai arrière;Etats1;Bools
+AxePosition;0;1;3;Mise à longueur quai arrière;Etats2;Bools
+AxePosition;0;2;3;Mise à longueur quai arrière;Position;Real
+AxePosition;0;3;3;Mise à longueur quai arrière;Vitesse;Int32
+;;;;;;
+AxeVitesse;0;0;0;Convoyeur entrée;Etats;Bools
+AxeVitesse;0;1;0;Convoyeur entrée;Intensité;Int32
+AxeVitesse;0;2;0;Convoyeur entrée;Vitesse;Int32
+;;;;;;
+AxeServoVitesse;0;0;0;Entrainement Guides MasterTwin;Etats;Bools
+AxeServoVitesse;0;1;0;Entrainement Guides MasterTwin;Reserve;Int32
+AxeServoVitesse;0;2;0;Entrainement Guides MasterTwin;Vitesse;Int32
+AxeServoVitesse;0;0;1;Griffe arrière;Etats;Bools
+AxeServoVitesse;0;1;1;Griffe arrière;Reserve;Int32
+AxeServoVitesse;0;2;1;Griffe arrière;Vitesse;Int32
+;;;;;;
+Cycle;0;0;0;Analyse;Grafcet - Etat;Bools
+Cycle;0;1;0;Analyse;Grafcet - Valeur;Int32
+Cycle;0;0;1;Chargement;Grafcet - Etat;Bools
+Cycle;0;1;1;Chargement;Grafcet - Valeur;Int32
+Cycle;0;0;2;Sciage;Grafcet - Etat;Bools
+Cycle;0;1;2;Sciage;Grafcet - Valeur;Int32
+Cycle;0;0;3;Planche;Grafcet - Etat;Bools
+Cycle;0;1;3;Planche;Grafcet - Valeur;Int32
+Cycle;0;0;4;Fin de sciage;Grafcet - Etat;Bools
+Cycle;0;1;4;Fin de sciage;Grafcet - Valeur;Int32
+Cycle;0;0;5;Rechargement;Grafcet - Etat;Bools
+Cycle;0;1;5;Rechargement;Grafcet - Valeur;Int32
+Cycle;0;0;6;Chargement grume étalon;Grafcet - Etat;Bools
+Cycle;0;1;6;Chargement grume étalon;Grafcet - Valeur;Int32
+;;;;;;
+Messagerie;0;0;;Defauts;;Bools
+Messagerie;0;1;;Defauts;;Bools
+Messagerie;0;2;;Defauts;;Bools
+Messagerie;0;3;;Defauts;;Bools
+Messagerie;0;4;;Defauts;;Bools
+Messagerie;0;5;;Defauts;;Bools
+Messagerie;0;6;;Defauts;;Bools
+Messagerie;0;7;;Defauts;;Bools
+Messagerie;0;8;;Defauts;;Bools
+Messagerie;0;9;;Defauts;;Bools
+Messagerie;0;10;;Defauts;;Bools
+Messagerie;0;11;;Defauts;;Bools
+Messagerie;0;12;;Defauts;;Bools
+Messagerie;0;13;;Defauts;;Bools
+Messagerie;0;14;;Defauts;;Bools
+Messagerie;0;15;;Defauts;;Bools
+Messagerie;0;0;;Alarme;;Bools
+Messagerie;0;1;;Alarme;;Bools
+Messagerie;0;2;;Alarme;;Bools
+Messagerie;0;3;;Alarme;;Bools
+Messagerie;0;4;;Alarme;;Bools
+Messagerie;0;5;;Alarme;;Bools
+Messagerie;0;6;;Alarme;;Bools
+Messagerie;0;7;;Alarme;;Bools
+Messagerie;0;8;;Alarme;;Bools
+Messagerie;0;9;;Alarme;;Bools
+Messagerie;0;10;;Alarme;;Bools
+Messagerie;0;11;;Alarme;;Bools
+Messagerie;0;12;;Alarme;;Bools
+Messagerie;0;13;;Alarme;;Bools
+Messagerie;0;14;;Alarme;;Bools
+Messagerie;0;15;;Alarme;;Bools

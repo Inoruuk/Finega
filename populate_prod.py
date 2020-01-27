@@ -35,7 +35,7 @@ if __name__ == '__main__':
 						'2: Aprobois\n'
 						'3: Les deux\n'))
 		except ValueError:
-			print("rentrez un numéro valide")
+			print("Rentrez un numéro valide")
 	if inp == 1:
 		ilt_pop()
 	elif inp == 2:
