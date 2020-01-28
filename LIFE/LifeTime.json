@@ -1,0 +1,924 @@
+{
+  "DatasComposant": [
+    {
+      "Composant": {
+        "Designation": "Chariot de glissière Canter gauche",
+        "Cle": 1,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 1,
+        "Repere": "CHGlissCG",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Chariot de glissière Canter droit",
+        "Cle": 2,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 1,
+        "Repere": "CHGlissCD",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Chariot de glissière Guide gauche",
+        "Cle": 3,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 1,
+        "Repere": "CHGlissGG",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Chariot de glissière Guide droit",
+        "Cle": 4,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 1,
+        "Repere": "CHGlissGD",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Chariot de glissière Bati gauche",
+        "Cle": 5,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 1,
+        "Repere": "CHGlissBG",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Chariot de glissière Bati droit",
+        "Cle": 6,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 1,
+        "Repere": "CHGlissBD",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Chariot de glissière Quai de sciage avant horizontal",
+        "Cle": 7,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 1,
+        "Repere": "CHGlissQSAvHoriz",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Chariot de glissière Quai de sciage arrière horizontal",
+        "Cle": 8,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 1,
+        "Repere": "CHGlissQSArrHoriz",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Chariot de glissière Quai de sciage avant vertical",
+        "Cle": 9,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 1,
+        "Repere": "CHGlissQSAvVert",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Chariot de glissière Quai de sciage arrière vertical",
+        "Cle": 10,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 1,
+        "Repere": "CHGlissQSArrVert",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Chariot de glissière Quai d'analyse avant vertical",
+        "Cle": 11,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 1,
+        "Repere": "CHGlissQAAvVert",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Chariot de glissière Quai d'analyse arrière vertical",
+        "Cle": 12,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 1,
+        "Repere": "CHGlissQAArrVert",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Verin Canter gauche",
+        "Cle": 13,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 5,
+        "Repere": "VerinCG",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Verin Canter droit",
+        "Cle": 14,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 5,
+        "Repere": "VerinCD",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Verin Guide gauche",
+        "Cle": 15,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 5,
+        "Repere": "VerinGG",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Verin Guide droit",
+        "Cle": 16,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 5,
+        "Repere": "VerinGD",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Verin Bati gauche",
+        "Cle": 17,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 5,
+        "Repere": "VerinBG",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Verin Bati droit",
+        "Cle": 18,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 5,
+        "Repere": "VerinBD",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Verin Quai de sciage avant horizontal",
+        "Cle": 19,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 5,
+        "Repere": "VerinQSAvHoriz",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Verin Quai de sciage arrière horizontal",
+        "Cle": 20,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 5,
+        "Repere": "VerinQSArrHoriz",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Verin Quai de sciage avant vertical",
+        "Cle": 21,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 5,
+        "Repere": "VerinQSAvVert",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Verin Quai de sciage arrière vertical",
+        "Cle": 22,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 5,
+        "Repere": "VerinQSArrVert",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Verin Quai d'analyse avant vertical",
+        "Cle": 23,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 5,
+        "Repere": "VerinQAAvVert",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Verin Quai d'analyse arrière vertical",
+        "Cle": 24,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 5,
+        "Repere": "VerinQAArrVert",
+        "Unite": 0
+      },
+      "Parametres": {
+        "Unite": 0,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Servo Canter gauche",
+        "Cle": 25,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 4,
+        "Repere": "ServoCG",
+        "Unite": 3
+      },
+      "Parametres": {
+        "Unite": 3,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Servo Canter droit",
+        "Cle": 26,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 4,
+        "Repere": "ServoCD",
+        "Unite": 3
+      },
+      "Parametres": {
+        "Unite": 3,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Servo Guide gauche",
+        "Cle": 27,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 4,
+        "Repere": "ServoGG",
+        "Unite": 3
+      },
+      "Parametres": {
+        "Unite": 3,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Servo Guide droit",
+        "Cle": 28,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 4,
+        "Repere": "ServoGD",
+        "Unite": 3
+      },
+      "Parametres": {
+        "Unite": 3,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Servo Bati gauche",
+        "Cle": 29,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 4,
+        "Repere": "ServoBG",
+        "Unite": 3
+      },
+      "Parametres": {
+        "Unite": 3,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Servo Bati droit",
+        "Cle": 30,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 4,
+        "Repere": "ServoBD",
+        "Unite": 3
+      },
+      "Parametres": {
+        "Unite": 3,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Servo Quai de sciage avant horizontal",
+        "Cle": 31,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 4,
+        "Repere": "ServoQSAvHoriz",
+        "Unite": 3
+      },
+      "Parametres": {
+        "Unite": 3,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Servo Quai de sciage arrière horizontal",
+        "Cle": 32,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 4,
+        "Repere": "ServoQSArrHoriz",
+        "Unite": 3
+      },
+      "Parametres": {
+        "Unite": 3,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Servo Quai de sciage avant vertical",
+        "Cle": 33,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 4,
+        "Repere": "ServoQSAvVert",
+        "Unite": 3
+      },
+      "Parametres": {
+        "Unite": 3,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Servo Quai de sciage arrière vertical",
+        "Cle": 34,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 4,
+        "Repere": "ServoQSArrVert",
+        "Unite": 3
+      },
+      "Parametres": {
+        "Unite": 3,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Servo Quai d'analyse avant vertical",
+        "Cle": 35,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 4,
+        "Repere": "ServoQAAvVert",
+        "Unite": 3
+      },
+      "Parametres": {
+        "Unite": 3,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Servo Quai d'analyse arrière vertical",
+        "Cle": 36,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 4,
+        "Repere": "ServoQAArrVert",
+        "Unite": 3
+      },
+      "Parametres": {
+        "Unite": 3,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Moteur Canter gauche",
+        "Cle": 37,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 3,
+        "Repere": "MotCG",
+        "Unite": 2
+      },
+      "Parametres": {
+        "Unite": 2,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Moteur Canter droit",
+        "Cle": 38,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 3,
+        "Repere": "MotCD",
+        "Unite": 2
+      },
+      "Parametres": {
+        "Unite": 2,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Moteur Bati gauche",
+        "Cle": 39,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 3,
+        "Repere": "MotBG",
+        "Unite": 2
+      },
+      "Parametres": {
+        "Unite": 2,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    },
+    {
+      "Composant": {
+        "Designation": "Moteur Bati droit",
+        "Cle": 40,
+        "Reference": "",
+        "ReferenceConstructeur": "",
+        "ImageComposant": "",
+        "TypeComposant": 3,
+        "Repere": "MotBD",
+        "Unite": 2
+      },
+      "Parametres": {
+        "Unite": 2,
+        "Seuil1": 0.0,
+        "Seuil2": 0.0
+      },
+      "Etat": {
+        "Valeur": 0.0
+      },
+      "Changements": {
+        "Changements": []
+      }
+    }
+  ]
+}

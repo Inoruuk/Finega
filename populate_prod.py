@@ -1,29 +1,23 @@
-import os
-import json
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Finega.settings')
-
-import django
-django.setup()
-
-from analizer.models import Campagne
+from os import listdir
+from json import load
+from pymongo import MongoClient
+client = MongoClient('mongodb://localhost:27017/')
+db = client.data
+prod = db.production
 
 
 def ilt_pop():
-	for file in os.listdir("ILT"):
-		with open("ILT/" + file) as f:
-			data = json.load(f)
-		for y in data['DatasInfoGestionProduction']:
-			cp = Campagne.create(param=y, name="ILT")
-			cp.save()
+	for file in listdir('ILT'):
+		with open('ILT/' + file) as f:
+			f = load(f)
+			prod.insert_many(f['DatasInfoGestionProduction'])
 
 
 def apro_pop():
-	for file in os.listdir("APROBOIS"):
-		with open("APROBOIS/" + file) as f:
-			data = json.load(f)
-		for y in data['DatasInfoGestionProduction']:
-			cp = Campagne.create(param=y, name="Aprobois")
-			cp.save()
+	for file in listdir('APROBOIS'):
+		with open('APROBOIS/' + file) as f:
+			f = load(f)
+			prod.insert_many(f['DatasInfoGestionProduction'])
 
 
 if __name__ == '__main__':
