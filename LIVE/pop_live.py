@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 from os import listdir
+from datetime import datetime
 from json import load
 client = MongoClient('mongodb://localhost:27017/')
 db = client.data
@@ -111,7 +112,10 @@ def pop(filename):
 
 			]
 			for val in res:
-				val['Date'] = f['Date']
+				'2020-01-08T15:00:00'
+				d = f['Date']
+				d = datetime(int(d[:4]), int(d[5:7]), int(d[8:10]), int(d[11:13]), int(d[14:16]), int(d[17:19]))
+				val['Date'] = d
 				if val['Theme'] == 'Input_TOR':
 					val['Valeur'] = val_itor[val['Groupe']][0]
 					val_itor[val['Groupe']].pop(0)
