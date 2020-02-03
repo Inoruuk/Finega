@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from os import listdir
+from os import listdir, system
 from datetime import datetime
 from json import load
 client = MongoClient('mongodb://localhost:27017/')
@@ -114,7 +114,7 @@ def pop(filename):
 			for val in res:
 				'2020-01-08T15:00:00'
 				d = f['Date']
-				d = datetime(int(d[:4]), int(d[5:7]), int(d[8:10]), int(d[11:13]), int(d[14:16]), int(d[17:19]))
+				# d = datetime(int(d[:4]), int(d[5:7]), int(d[8:10]), int(d[11:13]), int(d[14:16]), int(d[17:19]))
 				val['Date'] = d
 				if val['Theme'] == 'Input_TOR':
 					val['Valeur'] = val_itor[val['Groupe']][0]
@@ -175,5 +175,6 @@ def pop(filename):
 
 
 if __name__ == '__main__':
+	system('python3 replace.py')
 	for file in listdir('8'):
 		pop(file)
